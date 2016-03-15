@@ -204,6 +204,8 @@
 						font-family: 'Flow';
 						font-weight: bold;
 						outline: none;
+						position: relative;
+						z-index: -2;
 						i {
 							font-style: normal;
 							font-size: 1.8em;

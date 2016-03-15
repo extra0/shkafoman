@@ -69,186 +69,187 @@ $(function(){
 		switch(true) {
 			// ========== 2-е двери
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d60.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d40.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d40.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d50.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d50.png');
 				break;
 			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', '/img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d60.png');
+				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d60.png');
 				break;
-
+			// ======== 3и двери
+			
 		}
 
 
