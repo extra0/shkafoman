@@ -1,0 +1,249 @@
+// блок с калькулятором на главной
+.calculation {
+	// шаги калькулятора
+	&__steps {
+		position: relative;
+		z-index: 2;
+		&-section {
+			@include display(flex);
+			@include justify-content(center);
+		}
+		&-block {
+			&:not(:last-child) {
+				padding-right: 88px;
+				position: relative;
+				&:before {
+					content: '';
+					background: url(../img/steps-arrow.png) 0 0 no-repeat;
+					@include position(absolute, null 16px 17px null);
+					width: 57px;
+					height: 11px;
+				}
+			}
+		}
+		&-text {
+			font-size: 18px;
+			font-family: 'Flow';
+			margin: 0 0 -4px;
+			color: #9d9d9c;
+			&.done {
+				color: green;
+			}
+		}
+		&-img {
+			display: inline-block;
+			margin: 0 0 0 10px;
+			opacity: 0;
+			vertical-align: top;
+			@include transition(all 0.4s ease-in-out);
+			&.done {
+				opacity: 1;
+			}
+		}
+		&-btn {
+			padding: 0;
+			border: none;
+			background: none;
+			text-transform: uppercase;
+			color: #c1c1c1;
+			font-size: 26px;
+			font-family: 'Fira Sans';
+			font-weight: 500;
+			@include transition(all 0.4s ease-in-out);
+			&:hover,
+			&.active {
+				color: $bordo;
+				&[disabled] {
+					color: #c1c1c1;
+				}
+			}
+			&.active{
+				cursor: default;
+			}
+			&.done {
+				color: green;
+			}
+		}
+	}
+	// фильтр дверей
+	&__filter {
+		margin: 41px -60px 0 0;
+		position: relative;
+		z-index: 2;
+		&-block {
+			margin-top: -8px;
+		}
+		&-title {
+			color: #3d3f48;
+			font-size: 20px;
+			padding: 0 0 2px 43px;
+			font-family: 'Etelka';
+			font-weight: 300;
+			margin: 0 0 15px 0;
+			background: url(../img/filter-sprite.png) no-repeat;
+			&._doors-bg {
+				background-position: 6px 3px;
+			}
+			&._width-bg {
+				background-position: 6px -94px;
+			}
+			&._depth-bg {
+				background-position: 6px -44px;
+			}
+			&._height-bg {
+				background-position: 6px -140px;
+			}
+		}
+		&-radio {
+			display: none;
+			&:checked + .calculation__filter-label {
+				color: #3d3f48;
+				background: #c6c2c1;
+				-moz-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 4px rgba(0,0,0,.4);
+				-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 4px rgba(0,0,0,.4);
+				box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 4px rgba(0,0,0,.4);
+				border: 1px solid transparent;
+			}
+			&-wrapper {
+				display: inline-block;
+				padding: 9px 9px 9px 14px;
+				background: rgba(221,221,221,0.5);
+				border-radius: 6px;
+			}
+			&-block {
+				margin-bottom: 30px;
+			}
+		}
+		&-label {
+			height: 51px;
+			line-height: 55px;
+			width: 52px;
+			text-align: center;
+			display: inline-block;
+			color: $bordo;
+			font-family: 'Flow';
+			font-size: 22px;
+			cursor: pointer;
+			margin-left: -5px;
+			border: 1px solid #ccc9c7;
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+			&:nth-child(2) {
+				border-radius: 4px 0 0 4px;
+			}
+			&:last-child {
+				border-radius: 0 4px 4px 0;
+			}
+		}
+		&-range {
+			&-wrapper {
+				padding: 1px 35px;
+				margin: 22px 0 64px 0;
+				background-color: #e1dddb;
+				-moz-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				border-radius: 40px;
+			}
+			&.ui-slider {
+				margin-bottom: 17px;
+				margin-top: 19px;
+				height: 6px;
+				background-color: #c2c2c2;
+				-moz-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				box-shadow: 0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.15);
+				border: none;
+				border-radius: 0;
+				.ui-slider-handle {
+					background: url(../img/range-handled.png) 0 0 no-repeat;
+					border: none;
+					width: 41px;
+					height: 41px;
+					cursor: pointer;
+					margin-left: -21px;
+					outline: none;
+				}
+				.ui-slider-pip {
+					top: -3px;
+					&.ui-slider-pip-inrange .ui-slider-line {
+						background: $bordo;
+					}
+					.ui-slider-line {
+						background-color: #c2c2c2;
+						-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.3),inset 0 1px 2px rgba(0,0,0,0.15);
+						-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.3),inset 0 1px 2px rgba(0,0,0,0.15);
+						box-shadow: 0 1px 0 rgba(255,255,255,0.3),inset 0 1px 2px rgba(0,0,0,0.15);
+						width: 12px;
+						height: 12px;
+						margin-left: -6px;
+						border-radius: 100%;
+						transition: all 0.4s ease;
+					}
+					.ui-slider-label,
+					.ui-slider-label i,
+					.ui-slider-label span {
+						width: 100px;
+						margin-left: -50px;
+						text-align: center;
+					}
+					.ui-slider-label {
+						color: #3d3f48;
+						font-size: 16px;
+						font-family: 'Flow';
+						font-weight: bold;
+						outline: none;
+						i {
+							font-style: normal;
+							font-size: 1.8em;
+							position: absolute;
+						    top: -36px;
+						}
+						span {
+							position: absolute;
+							top: 18px;
+						}
+					}
+				}
+			}
+		}
+		&-btn {
+			padding: 13px 45px;
+		}
+	}
+	&__img {
+		display: inline-block;
+		@include transition(all 0.4s ease-in-out);
+		position: relative;
+		&[next-img] {
+			@include transition(all 1s ease-in-out);
+			@include position(absolute, 0 null null -400px);
+			opacity: 0;
+			&.change {
+				left: 0;
+				opacity: 1;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+		&[current-img] {
+			@include transition(all 0.2s ease-in-out);
+			position: relative;
+			top: 0;
+			&.change {
+				top: -200px;
+				opacity: 0;
+			}
+		}
+		// блок с картинками шкафа
+		&-holder {
+			text-align: center;
+			position: relative;
+			left: 76px;
+			top: 67px;
+		}
+	}
+}

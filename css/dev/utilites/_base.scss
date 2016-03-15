@@ -21,10 +21,42 @@ button, input, textarea {
 	outline: none;
 }
 
-.container-fluid {
-    min-width: 1000px;
-    max-width: 1200px;
-    position: relative;
-    font-size: 14px;
-    @include box-sizing(border-box);
+// button
+.btn {
+	border: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Etelka';
+	font-weight: bold;
+	border-radius: 14px;
+	padding: 10px 25px;
+	border-bottom: 7px solid #7a0728;
+	background: $bordo;
+	position: relative;
+	top: 0;
+	@include transition(all 0.1s ease-in-out);
+	&:hover {
+		background: lighten($bordo, 5%);
+	}
+	&:active {
+		@include transition(all 0.1s ease-in-out);
+		border-bottom: 0px solid #7a0728;
+		top: 7px;
+	}
+}
+
+// title
+.title {
+	font-size: 35px;
+	font-family: 'Etelka', sans-serif;
+	color: #3e4049;
+	margin: 0 0 20px 0;
+	text-align: center;
+}
+
+.rubl {
+	font-family: 'Rubl';
+	display: inline-block;
+	margin-left: 5px;
 }

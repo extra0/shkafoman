@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta description="">
+    <meta keywords="">
+    <link rel="shortcut icon" type="images/vnd.microsoft.icon" href="favicon.ico">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+    <script src="js/jquery.js"></script>
+    <title>ШкафоMan</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="header">
+        <div class="container">
+        </div>
+      </header>
+      <!-- блок калькулятора-->
+      <div class="calculation">
+        <div class="container">
+          <h2 class="title">Просчитайте стоимость шкафа всего за 3 шага</h2>
+          <!-- шаги калькулятора-->
+          <div class="calculation__steps-section">
+            <div class="calculation__steps-block">
+              <p class="calculation__steps-text">Шаг 1<img src="/img/ok.png" alt="okey" class="calculation__steps-img"></p>
+              <button type="button" class="calculation__steps-btn active">Характеристики</button>
+            </div>
+            <div class="calculation__steps-block">
+              <p class="calculation__steps-text">Шаг 2<img src="/img/ok.png" alt="okey" class="calculation__steps-img"></p>
+              <button type="button" class="calculation__steps-btn">Материалы</button>
+            </div>
+            <div class="calculation__steps-block">
+              <p class="calculation__steps-text">Шаг 3<img src="/img/ok.png" alt="okey" class="calculation__steps-img"></p>
+              <button type="button" disabled class="calculation__steps-btn">стоимость</button>
+            </div>
+          </div>
+          <!-- конец шаги калькулятора-->
+          <!-- шаг 1-->
+          <div class="row">
+            <!-- блок с фильтрами-->
+            <div class="col-sm-3">
+              <div class="calculation__filter">
+                <!-- фильтр дверей-->
+                <div class="calculation__filter-block">
+                  <p class="calculation__filter-title _doors-bg">Количество дверей</p>
+                  <div class="calculation__filter-radio-block">
+                    <div class="calculation__filter-radio-wrapper">
+                      <input type="radio" name="doors" id="radio_2" class="calculation__filter-radio">
+                      <label for="radio_2" class="calculation__filter-label">2</label>
+                      <input type="radio" name="doors" id="radio_3" class="calculation__filter-radio">
+                      <label for="radio_3" class="calculation__filter-label">3</label>
+                      <input type="radio" name="doors" id="radio_4" checked class="calculation__filter-radio">
+                      <label for="radio_4" class="calculation__filter-label">4</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- конец фильтра дверей-->
+                <!-- фильтр глубины-->
+                <div class="calculation__filter-block">
+                  <p class="calculation__filter-title _depth-bg">Глубина</p>
+                  <div style="width: 210px;" class="calculation__filter-range-wrapper">
+                    <div id="depth" class="calculation__filter-range"></div>
+                  </div>
+                </div>
+                <!-- конец фильтра глубины-->
+                <!-- фильтр ширины-->
+                <div class="calculation__filter-block">
+                  <p class="calculation__filter-title _width-bg">Ширина</p>
+                  <div class="calculation__filter-range-wrapper">
+                    <div id="width" class="calculation__filter-range"></div>
+                  </div>
+                </div>
+                <!-- конец фильтра ширины-->
+                <!-- фильтр высоты-->
+                <div class="calculation__filter-block">
+                  <p class="calculation__filter-title _height-bg">Высота</p>
+                  <div class="calculation__filter-range-wrapper">
+                    <div id="height" class="calculation__filter-range"></div>
+                  </div>
+                </div>
+                <!-- конец фильтра высоты-->
+                <button type="button" class="btn calculation__filter-btn">Следующий шаг</button>
+              </div>
+            </div>
+            <!-- конец блока с фильтрами-->
+            <!-- блок с изображением-->
+            <div class="col-sm-9">
+              <div class="calculation__img-holder"><img src="/img/items/5_2.jpg" alt="" next-img class="calculation__img"><img src="/img/items/5_1.jpg" alt="" current-img class="calculation__img"></div>
+            </div>
+            <!-- конец блока с изображением-->
+          </div>
+          <!-- конец шаг 1-->
+        </div>
+      </div>
+      <!-- конец блока калькулятора-->
+      <div class="buffer"></div>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
+  </body>
+</html>
