@@ -30,11 +30,11 @@ block content
 							.calculation__filter-radio-block
 								.calculation__filter-radio-wrapper
 									- for (i = 2; i <= 4; ++i) {
-										- if (i == 4) {
-											input.calculation__filter-radio(type="radio" name="doors" id="radio_#{i}" checked)
+										- if (i == 2) {
+											input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
 											label.calculation__filter-label(for="radio_#{i}") #{i}
 										-	} else {
-											input.calculation__filter-radio(type="radio" name="doors" id="radio_#{i}")
+											input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}")
 											label.calculation__filter-label(for="radio_#{i}") #{i}
 										- }
 									- }

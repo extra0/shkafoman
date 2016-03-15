@@ -219,23 +219,19 @@
 		@include transition(all 0.4s ease-in-out);
 		position: relative;
 		&[next-img] {
-			@include transition(all 1s ease-in-out);
-			@include position(absolute, 0 null null -400px);
+			@include position(relative, 0 null null -80%);
 			opacity: 0;
 			&.change {
-				left: 0;
-				opacity: 1;
-				right: 0;
-				margin: 0 auto;
+				-webkit-animation: left-to-right 0.4s ease;
+				animation: left-to-right 0.4s ease;
 			}
 		}
 		&[current-img] {
-			@include transition(all 0.2s ease-in-out);
-			position: relative;
-			top: 0;
+			@include position(absolute, 0 0 null 0);
+			margin: 0 auto;
 			&.change {
-				top: -200px;
-				opacity: 0;
+				-webkit-animation: center-to-top 0.4s ease;
+				animation: center-to-top 0.4s ease;
 			}
 		}
 		// блок с картинками шкафа
@@ -246,4 +242,28 @@
 			top: 67px;
 		}
 	}
+}
+
+// анимация перемещения картинки слева направо
+@include keyframes(left-to-right) {
+  from {
+    left: -80%;
+    opacity: 0;
+  }
+  to {
+  	opacity: 1;
+    left: 0;
+  }
+}
+
+// анимация перемещения картинки с цетра вверх
+@include keyframes(center-to-top) {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+  	opacity: 0;
+    top: -300px;
+  }
 }
