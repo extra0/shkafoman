@@ -11,53 +11,63 @@ block content
 						p.calculation__steps-text Шаг #{i}
 							img.calculation__steps-img(src="/img/ok.png", alt="okey")
 						- if (i == 1) {
-							button.calculation__steps-btn.active(type="button") Характеристики
+							button.calculation__steps-btn.active(type="button" step-btn="#{i}") Характеристики
 						- } else if (i == 2) {
-							button.calculation__steps-btn(type="button") Материалы
+							button.calculation__steps-btn(type="button" step-btn="#{i}" disabled) Материалы
 						- } else {
-							button.calculation__steps-btn(type="button" disabled) стоимость
+							button.calculation__steps-btn(type="button" step-btn="#{i}" disabled) стоимость
 						- }
 				- }
 			// конец шаги калькулятора
 			// шаг 1
-			.row
+			.row(calculation-step="1")
 				// блок с фильтрами
 				.col-sm-3
 					.calculation__filter
-						// фильтр дверей
-						.calculation__filter-block
-							p.calculation__filter-title._doors-bg Количество дверей
-							.calculation__filter-radio-block
-								.calculation__filter-radio-wrapper
-									- for (i = 2; i <= 4; ++i) {
-										- if (i == 2) {
-											input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
-											label.calculation__filter-label(for="radio_#{i}") #{i}
-										-	} else {
-											input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}")
-											label.calculation__filter-label(for="radio_#{i}") #{i}
+						// шаг 1
+						.calculation__filter-step
+							// фильтр дверей
+							.calculation__filter-block
+								p.calculation__filter-title._doors-bg Количество дверей
+								.calculation__filter-radio-block
+									.calculation__filter-radio-wrapper
+										- for (i = 2; i <= 4; ++i) {
+											- if (i == 3) {
+												input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
+												label.calculation__filter-label(for="radio_#{i}") #{i}
+											-	} else {
+												input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}")
+												label.calculation__filter-label(for="radio_#{i}") #{i}
+											- }
 										- }
-									- }
-						// конец фильтра дверей
-						// фильтр глубины
-						.calculation__filter-block
-							p.calculation__filter-title._depth-bg Глубина
-							.calculation__filter-range-wrapper(style="width: 210px;")
-								.calculation__filter-range#depth
-						// конец фильтра глубины
-						// фильтр ширины
-						.calculation__filter-block
-							p.calculation__filter-title._width-bg Ширина
-							.calculation__filter-range-wrapper
-								.calculation__filter-range#width
-						// конец фильтра ширины
-						// фильтр высоты
-						.calculation__filter-block
-							p.calculation__filter-title._height-bg Высота
-							.calculation__filter-range-wrapper
-								.calculation__filter-range#height
-						// конец фильтра высоты
-						button.btn.calculation__filter-btn(type="button") Следующий шаг
+							// конец фильтра дверей
+							// фильтр глубины
+							.calculation__filter-block
+								p.calculation__filter-title._depth-bg Глубина
+								.calculation__filter-range-wrapper(style="width: 210px;")
+									.calculation__filter-range#depth
+							// конец фильтра глубины
+							// фильтр ширины
+							.calculation__filter-block
+								p.calculation__filter-title._width-bg Ширина
+								.calculation__filter-range-wrapper
+									.calculation__filter-range#width
+							// конец фильтра ширины
+							// фильтр высоты
+							.calculation__filter-block
+								p.calculation__filter-title._height-bg Высота
+								.calculation__filter-range-wrapper
+									.calculation__filter-range#height
+							// конец фильтра высоты
+							.calculation__filter-block
+								button.btn.calculation__filter-btn(type="button") Следующий шаг
+						// конец шаг 1
+						// шаг 2
+						.calculation__filter-step
+						// конец шаг 2
+						// шаг 3
+						.calculation__filter-step
+						// конец шаг 3
 				// конец блока с фильтрами
 				// блок с изображением
 				.col-sm-9
@@ -65,5 +75,4 @@ block content
 						img.calculation__img(src="/img/items/5_2.jpg", alt="" next-img)
 						img.calculation__img(src="/img/items/5_1.jpg", alt="" current-img)
 				// конец блока с изображением
-			// конец шаг 1
 	// конец блока калькулятора
