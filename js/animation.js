@@ -18,11 +18,16 @@ $(function(){
 
 	$('.calculation__filter-radio').on('change', function(){
 		doorsVal = parseInt($(this).val());
-		
+
 		materialSelect.removeClass('show'); // снимаем класс отображения selectov
 		selectShow(); // функция показа selectov
 		imgChanger(); // функция смены изображения шкафа
 
+	});
+
+	$('.calculation__filter-select').on('change', function(){
+		console.log($(this).find('optgroup').attr('item-door-material'));
+		console.log($(this).attr('item-door-number'));
 	});
 
 	// слайдер глубины
@@ -82,194 +87,7 @@ $(function(){
 
 	// функция замены изображения шкафа
 	function imgChanger() {
-
-		// проверка на подстановку картинок
-		switch(true) {
-			// ========== 2-е двери
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h240_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h250_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 40 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h260_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h230_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h240_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h250_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 50 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w50_h260_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h230_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h240_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h250_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 60 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w60_h260_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h230_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h240_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h250_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 70 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w70_h260_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2300 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h230_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2400 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h240_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2500 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h250_d60.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 40):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d40.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 50):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d50.png');
-				break;
-			case (doorsVal == 2 && widthVal == 80 && heightVal == 2600 && depthVal == 60):
-				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d60.png');
-				break;
-			// ======== 3и двери
-
-		}
-
+		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe/Wardrobe_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
 
 		// анимация замены
 		imgs.addClass('change'); // добавляем класс на смену изображений

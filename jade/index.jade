@@ -67,21 +67,21 @@ block content
 							.calculation__filter-block.slideOut
 								p.calculation__filter-title._doors-bg Материалы
 								- for (i = 1; i <= 4; ++i) {
-									select.calculation__filter-select
+									select.calculation__filter-select(item-door-number="#{i}")
 										option Выберите Материал
-										optgroup(label="Бамбук")
+										optgroup(label="Бамбук" item-door-material="Doors_bamboo")
 											- for (k = 1; k <= 4; ++k) {
 												option #{k}
 											- }
-										optgroup(label="Зеркало")
+										optgroup(label="Зеркало" item-door-material="Doors_mirror")
 											- for (k = 1; k <= 4; ++k) {
 												option #{k}
 											- }
-										optgroup(label="Картинка")
+										optgroup(label="Картинка" item-door-material="Doors_picture")
 											- for (k = 1; k <= 4; ++k) {
 												option #{k}
 											- }
-										optgroup(label="Пластик")
+										optgroup(label="Пластик" item-door-material="Doors_plastic")
 											- for (k = 1; k <= 4; ++k) {
 												option #{k}
 											- } 
@@ -99,7 +99,5 @@ block content
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" next-img)
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" current-img)
 						.calculation__material-holder
-							img.calculation__img(src="/img/items/2-doors/Doors_mirror/Door_mirror_1_sec2_w40_h230.png", alt="")
-							img.calculation__img(src="/img/items/2-doors/Doors_bamboo/Door_bamboo_2_sec2_w40_h230.png", alt="")
 				// конец блока с изображением 
 	// конец блока калькулятора
