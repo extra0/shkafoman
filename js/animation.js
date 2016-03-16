@@ -249,7 +249,7 @@ $(function(){
 				nextImg.attr('src', 'img/items/2-doors/Wardrobe/Wardrobe_sec2_w80_h260_d60.png');
 				break;
 			// ======== 3и двери
-			
+
 		}
 
 
@@ -275,8 +275,6 @@ $(function(){
 			if (i <= $('.calculation__filter-step:nth-child(1) .calculation__filter-block').length) {
 				$('.calculation__filter-step:nth-child(1) .calculation__filter-block:nth-child('+ i +')').addClass('slideOut');
 				++i;
-			} else {
-				return false;
 			}
 		}, 200);
 
@@ -286,6 +284,22 @@ $(function(){
 			stepOne.prev().find('img').addClass('done');
 			stepTwo.addClass('active');
 			stepTwo.prop('disabled', false);
+			console.log($('.calculation__filter-step:nth-child(2) .calculation__filter-block').length);
+			setTimeout(function(){
+				$('.calculation__filter-step:nth-child(1)').hide(); // убираем блоки первого шага
+
+				// показываем блоки второго шага
+				var i = 1;
+				setInterval(function(){
+					if (i <= $('.calculation__filter-step:nth-child(2) .calculation__filter-block').length) {
+						$('.calculation__filter-step:nth-child(2) .calculation__filter-block:nth-child('+ i +')').removeClass('slideOut');
+						++i;
+					}
+				}, 200);
+			}, 1100);
+
+
+
 		} else if ($('[step-btn].active').attr('step-btn') == 2) {
 			stepTwo.removeClass('active');
 			stepTwo.addClass('done');
@@ -305,25 +319,34 @@ $(function(){
 			stepThree.prop('disabled', true);
 			stepThree.prop('disabled', true);
 			stepOne.prev().find('img').removeClass('done');
+
 			var i = 1;
 			setInterval(function(){
-				if (i <= $('.calculation__filter-block').length) {
-					$('.calculation__filter-block:nth-child('+ i +')').removeClass('slideOut');
+				if (i <= $('.calculation__filter-step:nth-child(2) .calculation__filter-block').length) {
+					$('.calculation__filter-step:nth-child(2) .calculation__filter-block:nth-child('+ i +')').addClass('slideOut');
 					++i;
-				} else {
-					return false;
 				}
 			}, 200);
-		} else if ($(this).attr('step-btn') == 1) {
-			stepTwo.prop('disabled', true);
+
+			setTimeout(function(){
+				$('.calculation__filter-step:nth-child(1)').show();
+				var i = 1;
+				setInterval(function(){
+					if (i <= $('.calculation__filter-step:nth-child(1) .calculation__filter-block').length) {
+						$('.calculation__filter-step:nth-child(1) .calculation__filter-block:nth-child('+ i +')').removeClass('slideOut');
+						++i;
+					}
+				}, 200);
+			}, 800);
+			
+
+		} else if ($(this).attr('step-btn') == 2) {
 			stepThree.prop('disabled', true);
-			stepThree.prop('disabled', true);
-			stepOne.prev().find('img').removeClass('done');
+			stepTwo.removeClass('done');
+			stepTwo.prev().find('img').removeClass('done');
 		}
 
 		$(this).addClass('active');
-
-		// $('[step-btn='+ $(this).attr('step-btn') - 1 +']').addClass('done');
 	});
 
 });
