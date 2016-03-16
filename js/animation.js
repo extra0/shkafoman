@@ -245,6 +245,30 @@ $(function(){
 			stepThree.prop('disabled', true);
 			stepTwo.removeClass('done');
 			stepTwo.prev().find('img').removeClass('done');
+
+			var i = 1,
+			 	timer = setInterval(function(){
+				if (i <= stepSection.find('.calculation__filter-block').length) {
+					stepSection.find('.calculation__filter-block:nth-child('+i+')').addClass('slideOut');
+					++i;
+				} else {
+					clearInterval(timer); // убираем зацикливание
+				}
+			}, 200);
+
+			// показываем блоки первого шага
+			setTimeout(function(){
+				stepSection.eq(1).show();
+				var i = 1,
+					timer = setInterval(function(){
+					if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
+						stepSection.eq(1).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
+						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
+					}
+				}, 200);
+			}, 1000);
 		}
 
 		$(this).addClass('active');
