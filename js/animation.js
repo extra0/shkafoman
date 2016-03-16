@@ -1,14 +1,28 @@
 $(function(){
 
-	// задаем переменные = начальным параметрам характеристик фильтра
-	var doorsVal = 3,
-		depthVal = 50,
-		widthVal = 60,
-		heightVal = 2400;
+	var doorsVal = 3, // кол-во жверей
+		depthVal = 50, // значение глубины
+		widthVal = 60, // значение ширины
+		heightVal = 2400, // значенеи высоты
+		nextImg = $('[next-img]'), // следующее подгружаемое изображение 
+		imgs = $('[current-img], [next-img]'), // текущее и следующее изображение
+		materialSelect = $('.calculation__filter-select'), // select выбора материала
+
+		// шаги переходов 
+		stepOne = $('[step-btn="1"]'),
+		stepTwo = $('[step-btn="2"]'),
+		stepThree = $('[step-btn="3"]');
+
+
+	selectShow(); // функция показа selectov при загрузке
 
 	$('.calculation__filter-radio').on('change', function(){
 		doorsVal = parseInt($(this).val());
-		imgChanger();
+		
+		materialSelect.removeClass('show'); // снимаем класс отображения selectov
+		selectShow(); // функция показа selectov
+		imgChanger(); // функция смены изображения шкафа
+
 	});
 
 	// слайдер глубины
@@ -59,11 +73,15 @@ $(function(){
 		suffix: " см"
 	});
 
-	// функция замены изображения
-	function imgChanger() {
+	// функция показа selectov материала
+	function selectShow() {
+		for (var i = 0; i < doorsVal; ++i) { 
+			materialSelect.eq(i).addClass('show');	
+		}
+	}
 
-		var nextImg = $('[next-img]'),
-			imgs = $('[current-img], [next-img]');
+	// функция замены изображения шкафа
+	function imgChanger() {
 
 		// проверка на подстановку картинок
 		switch(true) {
@@ -262,11 +280,6 @@ $(function(){
 		}, 400);
 	}
 
-
-	var stepOne = $('[step-btn="1"]'),
-		stepTwo = $('[step-btn="2"]'),
-		stepThree = $('[step-btn="3"]');
-
 	// переход на следующий шаг калькулятора
 	$('.calculation__filter-btn').on('click', function(){
 		var i = 1;
@@ -284,7 +297,7 @@ $(function(){
 			stepOne.prev().find('img').addClass('done');
 			stepTwo.addClass('active');
 			stepTwo.prop('disabled', false);
-			console.log($('.calculation__filter-step:nth-child(2) .calculation__filter-block').length);
+
 			setTimeout(function(){
 				$('.calculation__filter-step:nth-child(1)').hide(); // убираем блоки первого шага
 
@@ -296,7 +309,7 @@ $(function(){
 						++i;
 					}
 				}, 200);
-			}, 1100);
+			}, 1300);
 
 
 
@@ -311,12 +324,11 @@ $(function(){
 
 	// кликаем на шаги 
 	$('[step-btn]').click(function(){
-		
+
 		// если кликаем на 1-й шаг калькулятора
 		if ($(this).attr('step-btn') == 1) {
 			$('[step-btn]').removeClass('active done');
 			stepTwo.prop('disabled', true);
-			stepThree.prop('disabled', true);
 			stepThree.prop('disabled', true);
 			stepOne.prev().find('img').removeClass('done');
 

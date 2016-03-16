@@ -223,6 +223,11 @@
 		&-btn {
 			padding: 13px 45px;
 		}
+		&-select {
+			display: none;
+			width: 100%;
+			margin-bottom: 20px;
+		}
 	}
 	&__img {
 		display: inline-block;

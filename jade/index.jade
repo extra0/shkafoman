@@ -67,11 +67,23 @@ block content
 							.calculation__filter-block.slideOut
 								p.calculation__filter-title._doors-bg Материалы
 								- for (i = 1; i <= 4; ++i) {
-									select(style="width: 100%;margin-bottom: 10px;")
-										option #{i}
-										option #{i}
-										option #{i}
-										option #{i}
+									select.calculation__filter-select
+										optgroup(label="Бамбук")
+											- for (k = 1; k <= 4; ++k) {
+												option #{k}
+											- }
+										optgroup(label="Зеркало")
+											- for (k = 1; k <= 4; ++k) {
+												option #{k}
+											- }
+										optgroup(label="Картинка")
+											- for (k = 1; k <= 4; ++k) {
+												option #{k}
+											- }
+										optgroup(label="Пластик")
+											- for (k = 1; k <= 4; ++k) {
+												option #{k}
+											- } 
 								- }
 							.calculation__filter-block.slideOut
 								button.btn.calculation__filter-btn(type="button") Следующий шаг
@@ -85,5 +97,5 @@ block content
 					.calculation__img-holder
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" next-img)
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" current-img)
-				// конец блока с изображением
+				// конец блока с изображением 
 	// конец блока калькулятора
