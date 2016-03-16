@@ -68,23 +68,11 @@ block content
 								p.calculation__filter-title._doors-bg Материалы
 								- for (i = 1; i <= 4; ++i) {
 									select.calculation__filter-select(item-door-number="#{i}")
-										option Выберите Материал
-										optgroup(label="Бамбук" item-door-material="Door_bamboo")
-											- for (k = 1; k <= 4; ++k) {
-												option #{k}
-											- }
-										optgroup(label="Зеркало" item-door-material="Door_mirror")
-											- for (k = 1; k <= 4; ++k) {
-												option #{k}
-											- }
-										optgroup(label="Картинка" item-door-material="Door_picture")
-											- for (k = 1; k <= 4; ++k) {
-												option #{k}
-											- }
-										optgroup(label="Пластик" item-door-material="Door_plastic")
-											- for (k = 1; k <= 4; ++k) {
-												option #{k}
-											- } 
+										option(item-door-material="none") Выберите Материал
+										option(item-door-material="Door_bamboo") Бамбук
+										option(item-door-material="Door_mirror") Зеркало
+										option(item-door-material="Door_picture") Картинка
+										option(item-door-material="Door_plastic") Пластик
 								- }
 							.calculation__filter-block.slideOut
 								button.btn.calculation__filter-btn(type="button") Следующий шаг

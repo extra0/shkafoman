@@ -78,9 +78,24 @@ $(function(){
 
 	$('.calculation__filter-select').on('change', function(){
 		var materialDoorNumber = $(this).attr('item-door-number'), // номер двери
-			materialDoor = $(this).find('option:selected').parent().attr('item-door-material'); // материал двери
+			materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
 
-		materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
+		if (materialDoor == 'none') {
+			materialImg.eq(materialDoorNumber-1).fadeOut(400);
+			setTimeout(function(){
+				materialImg.eq(materialDoorNumber-1).removeAttr('style');
+				materialImg.eq(materialDoorNumber-1).attr('src', '');
+			}, 500);
+		} else {
+			materialImg.eq(materialDoorNumber-1).fadeOut(200);
+			setTimeout(function(){
+				materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
+				materialImg.eq(materialDoorNumber-1).fadeIn(300);
+			}, 200);
+			
+		}
+
+		materialImg.eq(materialDoorNumber-1).addClass('change');
 	});
 
 
