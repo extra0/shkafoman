@@ -68,6 +68,7 @@ block content
 								p.calculation__filter-title._doors-bg Материалы
 								- for (i = 1; i <= 4; ++i) {
 									select.calculation__filter-select
+										option Выберите Материал
 										optgroup(label="Бамбук")
 											- for (k = 1; k <= 4; ++k) {
 												option #{k}
@@ -97,5 +98,8 @@ block content
 					.calculation__img-holder
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" next-img)
 						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" current-img)
+						.calculation__material-holder
+							img.calculation__img(src="/img/items/2-doors/Doors_mirror/Door_mirror_1_sec2_w40_h230.png", alt="")
+							img.calculation__img(src="/img/items/2-doors/Doors_bamboo/Door_bamboo_2_sec2_w40_h230.png", alt="")
 				// конец блока с изображением 
 	// конец блока калькулятора
