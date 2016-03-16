@@ -32,7 +32,7 @@ block content
 								.calculation__filter-radio-block
 									.calculation__filter-radio-wrapper
 										- for (i = 2; i <= 4; ++i) {
-											- if (i == 3) {
+											- if (i == 2) {
 												input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
 												label.calculation__filter-label(for="radio_#{i}") #{i}
 											-	} else {
@@ -90,8 +90,8 @@ block content
 				// блок с изображением
 				.col-sm-9
 					.calculation__img-holder
-						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" next-img)
-						img.calculation__img(src="/img/items/2-doors/Wardrobe/Wardrobe_sec2_w40_h230_d40.png", alt="" current-img)
+						img.calculation__img(src="", next-img)
+						img.calculation__img(src="", current-img)
 						.calculation__material-holder
 							img.calculation__material-holder-img(src="")
 							img.calculation__material-holder-img(src="")

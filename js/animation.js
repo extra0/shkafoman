@@ -1,9 +1,9 @@
 $(function(){
 
-	var doorsVal = 3, // кол-во жверей
-		depthVal = 50, // значение глубины
-		widthVal = 60, // значение ширины
-		heightVal = 2400, // значенеи высоты
+	var doorsVal = parseInt($('.calculation__filter-radio:checked').val()), // кол-во дверей = отмеченному радиобаттону в html
+		depthVal = 50, // начальное значение глубины
+		widthVal = 60, // начальное значение ширины
+		heightVal = 2400, // начальное значение высоты
 
 		nextImg = $('[next-img]'), // следующее подгружаемое изображение 
 		imgs = $('[current-img], [next-img]'), // текущее и следующее изображение
@@ -15,7 +15,7 @@ $(function(){
 		stepTwo = $('[step-btn="2"]'),
 		stepThree = $('[step-btn="3"]');
 
-
+	imgChanger(); // вызов функции замены при загрузке
 	selectShow(); // функция показа selectov при загрузке
 
 	$('.calculation__filter-radio').on('change', function(){
@@ -81,17 +81,23 @@ $(function(){
 			materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
 
 		if (materialDoor == 'none') {
-			// materialImg.eq(materialDoorNumber-1).fadeOut(400);
+			materialImg.eq(materialDoorNumber-1).addClass('fadeOut');
 			setTimeout(function(){
-				materialImg.eq(materialDoorNumber-1).removeAttr('style');
 				materialImg.eq(materialDoorNumber-1).attr('src', '');
 			}, 500);
 		} else {
-			// materialImg.eq(materialDoorNumber-1).fadeOut(160);
-			setTimeout(function(){
+			materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
+			materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
+
+			// удаляем класс запуска анимации по окончанию замены
+			setTimeout(function(){ 
+				materialImg.eq(materialDoorNumber-1).removeClass('change');
+			}, 1000);
+
+			// меняем кратинку двери на 50% работы анимации
+			setTimeout(function(){ 
 				materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
-				// materialImg.eq(materialDoorNumber-1).fadeIn(300);
-			}, 300);
+			},300)
 		}
 	});
 
@@ -208,7 +214,16 @@ $(function(){
 			stepTwo.prop('disabled', true);
 			stepThree.prop('disabled', true);
 			stepBtn.prev().find('img').removeClass('done');
-			
+
+			// убираем картинки материалов
+			materialImg.addClass('fadeOut');
+			setTimeout(function(){
+				materialImg.attr('src', '');
+				materialImg.removeClass('fadeOut');
+			}, 600);
+			//ставим на селекты дефолтные значения
+			materialSelect.find('option:nth-child(1)').prop('selected', true);
+
 		// клик по 2-му шагу
 		} else if ($(this).attr('step-btn') == 2) {
 			stepThree.prop('disabled', true);

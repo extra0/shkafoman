@@ -5,3 +5,52 @@
 .text-right {
 	text-align: right;
 }
+
+// animation
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+  to {
+  	opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  from {
+    opacity: 1;
+  }
+  to {
+  	opacity: 0;
+  }
+}
+
+@include keyframes(center-top-center) {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+  	opacity: 0;
+  	top: -200px;
+  }
+  100% {
+	opacity: 1;
+	top: 0;
+  }
+}
+
+@include keyframes(center-bottom-center) {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  50% {
+  	opacity: 0;
+  	bottom: -200px;
+  }
+  100% {
+	opacity: 1;
+	bottom: 0;
+  }
+}
