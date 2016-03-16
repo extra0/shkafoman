@@ -7,6 +7,8 @@ $(function(){
 		nextImg = $('[next-img]'), // следующее подгружаемое изображение 
 		imgs = $('[current-img], [next-img]'), // текущее и следующее изображение
 		materialSelect = $('.calculation__filter-select'), // select выбора материала
+		materialImg = $('.calculation__material-holder-img'), // picture-holder для материалов
+		
 
 		// шаги переходов 
 		stepOne = $('[step-btn="1"]'),
@@ -23,11 +25,6 @@ $(function(){
 		selectShow(); // функция показа selectov
 		imgChanger(); // функция смены изображения шкафа
 
-	});
-
-	$('.calculation__filter-select').on('change', function(){
-		console.log($(this).find('optgroup').attr('item-door-material'));
-		console.log($(this).attr('item-door-number'));
 	});
 
 	// слайдер глубины
@@ -78,6 +75,15 @@ $(function(){
 		suffix: " см"
 	});
 
+
+	$('.calculation__filter-select').on('change', function(){
+		var materialDoorNumber = $(this).attr('item-door-number'), // номер двери
+			materialDoor = $(this).find('option:selected').parent().attr('item-door-material'); // материал двери
+
+		materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
+	});
+
+
 	// функция показа selectov материала
 	function selectShow() {
 		for (var i = 0; i < doorsVal; ++i) { 
@@ -97,6 +103,12 @@ $(function(){
 			$('[current-img]').attr('src', $('[next-img]').attr('src')); // делаем замену нового изображения на текущее
 		}, 400);
 	}
+
+
+
+
+
+
 
 	// переход на следующий шаг калькулятора
 	$('.calculation__filter-btn').on('click', function(){
