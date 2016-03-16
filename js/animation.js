@@ -120,81 +120,127 @@ $(function(){
 
 
 
+	var stepSection = $('.calculation__filter-step'),
+		stepBlock = $('.calculation__filter-block');
 
 
-
-	// переход на следующий шаг калькулятора
+	// переход на следующий шаг калькулятора по кнопке
 	$('.calculation__filter-btn').on('click', function(){
-		var i = 1;
-			
-		setInterval(function(){
-			if (i <= $('.calculation__filter-step:nth-child(1) .calculation__filter-block').length) {
-				$('.calculation__filter-step:nth-child(1) .calculation__filter-block:nth-child('+ i +')').addClass('slideOut');
-				++i;
-			}
-		}, 200);
 
 		if ($('[step-btn].active').attr('step-btn') == 1) {
+
+			stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
+
+			// убираем блоки 1-го шага
+			var i = 1,
+				timer = setInterval(function(){
+				if (i <= stepSection.eq(0).find('.calculation__filter-block').length) {
+					stepSection.eq(0).find(stepBlock.eq(i-1)).addClass('slideOut');
+					++i;
+				} else {
+					clearInterval(timer); // убираем зацикливание
+				}
+			}, 200);
+
 			stepOne.removeClass('active');
 			stepOne.addClass('done');
 			stepOne.prev().find('img').addClass('done');
 			stepTwo.addClass('active');
 			stepTwo.prop('disabled', false);
 
+			// показываем блоки второго шага
 			setTimeout(function(){
-				$('.calculation__filter-step:nth-child(1)').hide(); // убираем блоки первого шага
 
-				// показываем блоки второго шага
-				var i = 1;
-				setInterval(function(){
-					if (i <= $('.calculation__filter-step:nth-child(2) .calculation__filter-block').length) {
-						$('.calculation__filter-step:nth-child(2) .calculation__filter-block:nth-child('+ i +')').removeClass('slideOut');
+				var i = 1,
+				 	timer = setInterval(function(){
+					if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
+						stepSection.eq(1).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
 						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
 					}
 				}, 200);
+			 	stepSection.eq(0).hide(); // убираем блоки первого шага
 			}, 1300);
 
 
 
 		} else if ($('[step-btn].active').attr('step-btn') == 2) {
+
+			// убираем блоки 2-го шага
+			var i = 1,
+				timerwe = setInterval(function(){
+				if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
+					stepSection.eq(1).find('.calculation__filter-block:nth-child('+i+')').addClass('slideOut');
+					++i;
+				} else {
+					clearInterval(timerwe); // убираем зацикливание
+				}
+			}, 200);
+
 			stepTwo.removeClass('active');
 			stepTwo.addClass('done');
 			stepTwo.prev().find('img').addClass('done');
 			stepThree.addClass('active');
 			stepThree.prop('disabled', false);
+
+			// показываем блоки 3-го шага
+			setTimeout(function(){
+				stepSection.eq(1).hide(); // убираем блоки второго шага
+
+				// показываем блоки третьего шага
+				var i = 1,
+				 	timer = setInterval(function(){
+					if (i <= stepSection.eq(2).find('.calculation__filter-block').length) {
+						stepSection.eq(2).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
+						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
+					}
+				}, 200);
+			}, 1000);
 		}
 	});
 
-	// кликаем на шаги 
+	// переход на предыдущие шаги
+	var stepBtn = $('[step-btn]');
+
 	$('[step-btn]').click(function(){
 
+		var stepNumber = $(this).attr('step-btn');
+
 		// если кликаем на 1-й шаг калькулятора
-		if ($(this).attr('step-btn') == 1) {
+		if (stepNumber == 1) {
 			$('[step-btn]').removeClass('active done');
 			stepTwo.prop('disabled', true);
 			stepThree.prop('disabled', true);
-			stepOne.prev().find('img').removeClass('done');
+			stepBtn.prev().find('img').removeClass('done');
 
-			var i = 1;
-			setInterval(function(){
-				if (i <= $('.calculation__filter-step:nth-child(2) .calculation__filter-block').length) {
-					$('.calculation__filter-step:nth-child(2) .calculation__filter-block:nth-child('+ i +')').addClass('slideOut');
+			var i = 1,
+			 	timer = setInterval(function(){
+				if (i <= stepSection.find('.calculation__filter-block').length) {
+					stepSection.find('.calculation__filter-block:nth-child('+i+')').addClass('slideOut');
 					++i;
+				} else {
+					clearInterval(timer); // убираем зацикливание
 				}
 			}, 200);
 
+			// показываем блоки первого шага
 			setTimeout(function(){
-				$('.calculation__filter-step:nth-child(1)').show();
-				var i = 1;
-				setInterval(function(){
-					if (i <= $('.calculation__filter-step:nth-child(1) .calculation__filter-block').length) {
-						$('.calculation__filter-step:nth-child(1) .calculation__filter-block:nth-child('+ i +')').removeClass('slideOut');
+				stepSection.eq(0).show();
+				var i = 1,
+					timer = setInterval(function(){
+					if (i <= stepSection.eq(0).find('.calculation__filter-block').length) {
+						stepSection.eq(0).find(stepBlock.eq(i-1)).removeClass('slideOut');
 						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
 					}
 				}, 200);
-			}, 800);
+			}, 1000);
 			
-
+		// клик по 2-му шагу
 		} else if ($(this).attr('step-btn') == 2) {
 			stepThree.prop('disabled', true);
 			stepTwo.removeClass('done');
