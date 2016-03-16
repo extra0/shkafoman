@@ -76,8 +76,8 @@ $(function(){
 	});
 
 
-	$('.calculation__filter-select').on('change', function(){
-		var materialDoorNumber = $(this).attr('item-door-number'), // номер двери
+	materialSelect.on('change', function(){
+		var materialDoorNumber = $(this).attr('item-door-number'), // номер двери по порядку слева направо
 			materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
 
 		if (materialDoor == 'none') {
@@ -91,11 +91,9 @@ $(function(){
 			setTimeout(function(){
 				materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
 				materialImg.eq(materialDoorNumber-1).fadeIn(300);
-			}, 200);
+			}, 300);
 			
 		}
-
-		materialImg.eq(materialDoorNumber-1).addClass('change');
 	});
 
 
