@@ -24,68 +24,69 @@ block content
 				// блок с фильтрами
 				.col-sm-3
 					.calculation__filter
-						// шаг 1
-						.calculation__filter-step
-							// фильтр дверей
-							.calculation__filter-block
-								p.calculation__filter-title._doors-bg Количество дверей
-								.calculation__filter-radio-block
-									.calculation__filter-radio-wrapper
-										- for (i = 2; i <= 4; ++i) {
-											- if (i == 2) {
-												input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
-												label.calculation__filter-label(for="radio_#{i}") #{i}
-											-	} else {
-												input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}")
-												label.calculation__filter-label(for="radio_#{i}") #{i}
+						form(action="form")
+							// шаг 1
+							.calculation__filter-step
+								// фильтр дверей
+								.calculation__filter-block
+									p.calculation__filter-title._doors-bg Количество дверей
+									.calculation__filter-radio-block
+										.calculation__filter-radio-wrapper
+											- for (i = 2; i <= 4; ++i) {
+												- if (i == 2) {
+													input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}" checked)
+													label.calculation__filter-label(for="radio_#{i}") #{i}
+												-	} else {
+													input.calculation__filter-radio(type="radio" name="doors" value="#{i}" id="radio_#{i}")
+													label.calculation__filter-label(for="radio_#{i}") #{i}
+												- }
 											- }
-										- }
-							// конец фильтра дверей
-							// фильтр глубины
-							.calculation__filter-block
-								p.calculation__filter-title._depth-bg Глубина
-								.calculation__filter-range-wrapper(style="width: 210px;")
-									.calculation__filter-range#depth
-							// конец фильтра глубины
-							// фильтр ширины
-							.calculation__filter-block
-								p.calculation__filter-title._width-bg Ширина
-								.calculation__filter-range-wrapper
-									.calculation__filter-range#width
-							// конец фильтра ширины
-							// фильтр высоты
-							.calculation__filter-block
-								p.calculation__filter-title._height-bg Высота
-								.calculation__filter-range-wrapper
-									.calculation__filter-range#height
-							// конец фильтра высоты
-							.calculation__filter-block
-								button.btn.calculation__filter-btn(type="button") Следующий шаг
-						// конец шаг 1
-						// шаг 2
-						.calculation__filter-step
-							.calculation__filter-block.slideOut
-								p.calculation__filter-title._doors-bg Материалы
-								- for (i = 1; i <= 4; ++i) {
-									select.calculation__filter-select(item-door-number="#{i}")
-										option(item-door-material="none") Выберите Материал
-										option(item-door-material="Door_bamboo") Бамбук
-										option(item-door-material="Door_mirror") Зеркало
-										option(item-door-material="Door_picture") Картинка
-										option(item-door-material="Door_plastic") Пластик
-								- }
-							.calculation__filter-block.slideOut
-								button.btn.calculation__filter-btn(type="button") Следующий шаг
-						// конец шаг 2
-						// шаг 3
-						.calculation__filter-step
-							.calculation__filter-block.slideOut
-								p че ни будь из инфы еще
-							.calculation__filter-block.slideOut
-								p че ни будь из инфы
-							.calculation__filter-block.slideOut
-								button.btn.calculation__filter-btn(type="submit") Оформить заказ
-						// конец шаг 3
+								// конец фильтра дверей
+								// фильтр глубины
+								.calculation__filter-block
+									p.calculation__filter-title._depth-bg Глубина
+									.calculation__filter-range-wrapper(style="width: 210px;")
+										.calculation__filter-range#depth
+								// конец фильтра глубины
+								// фильтр ширины
+								.calculation__filter-block
+									p.calculation__filter-title._width-bg Ширина
+									.calculation__filter-range-wrapper
+										.calculation__filter-range#width
+								// конец фильтра ширины
+								// фильтр высоты
+								.calculation__filter-block
+									p.calculation__filter-title._height-bg Высота
+									.calculation__filter-range-wrapper
+										.calculation__filter-range#height
+								// конец фильтра высоты
+								.calculation__filter-block
+									button.btn.calculation__filter-btn(type="button") Следующий шаг
+							// конец шаг 1
+							// шаг 2
+							.calculation__filter-step
+								.calculation__filter-block.slideOut
+									p.calculation__filter-title._doors-bg Материалы
+									- for (i = 1; i <= 4; ++i) {
+										select.calculation__filter-select(item-door-number="#{i}")
+											option(item-door-material="none") Выберите Материал
+											option(item-door-material="Door_bamboo") Бамбук
+											option(item-door-material="Door_mirror") Зеркало
+											option(item-door-material="Door_picture") Картинка
+											option(item-door-material="Door_plastic") Пластик
+									- }
+								.calculation__filter-block.slideOut
+									button.btn.calculation__filter-btn(type="button") Следующий шаг
+							// конец шаг 2
+							// шаг 3
+							.calculation__filter-step
+								.calculation__filter-block.slideOut
+									p че ни будь из инфы еще
+								.calculation__filter-block.slideOut
+									p че ни будь из инфы
+								.calculation__filter-block.slideOut
+									button.btn.calculation__filter-btn(type="submit") Оформить заказ
+							// конец шаг 3
 				// конец блока с фильтрами
 				// блок с изображением
 				.col-sm-9

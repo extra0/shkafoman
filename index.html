@@ -42,103 +42,105 @@
             <!-- блок с фильтрами-->
             <div class="col-sm-3">
               <div class="calculation__filter">
-                <!-- шаг 1-->
-                <div class="calculation__filter-step">
-                  <!-- фильтр дверей-->
-                  <div class="calculation__filter-block">
-                    <p class="calculation__filter-title _doors-bg">Количество дверей</p>
-                    <div class="calculation__filter-radio-block">
-                      <div class="calculation__filter-radio-wrapper">
-                        <input type="radio" name="doors" value="2" id="radio_2" checked class="calculation__filter-radio">
-                        <label for="radio_2" class="calculation__filter-label">2</label>
-                        <input type="radio" name="doors" value="3" id="radio_3" class="calculation__filter-radio">
-                        <label for="radio_3" class="calculation__filter-label">3</label>
-                        <input type="radio" name="doors" value="4" id="radio_4" class="calculation__filter-radio">
-                        <label for="radio_4" class="calculation__filter-label">4</label>
+                <form action="form">
+                  <!-- шаг 1-->
+                  <div class="calculation__filter-step">
+                    <!-- фильтр дверей-->
+                    <div class="calculation__filter-block">
+                      <p class="calculation__filter-title _doors-bg">Количество дверей</p>
+                      <div class="calculation__filter-radio-block">
+                        <div class="calculation__filter-radio-wrapper">
+                          <input type="radio" name="doors" value="2" id="radio_2" checked class="calculation__filter-radio">
+                          <label for="radio_2" class="calculation__filter-label">2</label>
+                          <input type="radio" name="doors" value="3" id="radio_3" class="calculation__filter-radio">
+                          <label for="radio_3" class="calculation__filter-label">3</label>
+                          <input type="radio" name="doors" value="4" id="radio_4" class="calculation__filter-radio">
+                          <label for="radio_4" class="calculation__filter-label">4</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- конец фильтра дверей-->
-                  <!-- фильтр глубины-->
-                  <div class="calculation__filter-block">
-                    <p class="calculation__filter-title _depth-bg">Глубина</p>
-                    <div style="width: 210px;" class="calculation__filter-range-wrapper">
-                      <div id="depth" class="calculation__filter-range"></div>
+                    <!-- конец фильтра дверей-->
+                    <!-- фильтр глубины-->
+                    <div class="calculation__filter-block">
+                      <p class="calculation__filter-title _depth-bg">Глубина</p>
+                      <div style="width: 210px;" class="calculation__filter-range-wrapper">
+                        <div id="depth" class="calculation__filter-range"></div>
+                      </div>
+                    </div>
+                    <!-- конец фильтра глубины-->
+                    <!-- фильтр ширины-->
+                    <div class="calculation__filter-block">
+                      <p class="calculation__filter-title _width-bg">Ширина</p>
+                      <div class="calculation__filter-range-wrapper">
+                        <div id="width" class="calculation__filter-range"></div>
+                      </div>
+                    </div>
+                    <!-- конец фильтра ширины-->
+                    <!-- фильтр высоты-->
+                    <div class="calculation__filter-block">
+                      <p class="calculation__filter-title _height-bg">Высота</p>
+                      <div class="calculation__filter-range-wrapper">
+                        <div id="height" class="calculation__filter-range"></div>
+                      </div>
+                    </div>
+                    <!-- конец фильтра высоты-->
+                    <div class="calculation__filter-block">
+                      <button type="button" class="btn calculation__filter-btn">Следующий шаг</button>
                     </div>
                   </div>
-                  <!-- конец фильтра глубины-->
-                  <!-- фильтр ширины-->
-                  <div class="calculation__filter-block">
-                    <p class="calculation__filter-title _width-bg">Ширина</p>
-                    <div class="calculation__filter-range-wrapper">
-                      <div id="width" class="calculation__filter-range"></div>
+                  <!-- конец шаг 1-->
+                  <!-- шаг 2-->
+                  <div class="calculation__filter-step">
+                    <div class="calculation__filter-block slideOut">
+                      <p class="calculation__filter-title _doors-bg">Материалы</p>
+                      <select item-door-number="1" class="calculation__filter-select">
+                        <option item-door-material="none">Выберите Материал</option>
+                        <option item-door-material="Door_bamboo">Бамбук</option>
+                        <option item-door-material="Door_mirror">Зеркало</option>
+                        <option item-door-material="Door_picture">Картинка</option>
+                        <option item-door-material="Door_plastic">Пластик</option>
+                      </select>
+                      <select item-door-number="2" class="calculation__filter-select">
+                        <option item-door-material="none">Выберите Материал</option>
+                        <option item-door-material="Door_bamboo">Бамбук</option>
+                        <option item-door-material="Door_mirror">Зеркало</option>
+                        <option item-door-material="Door_picture">Картинка</option>
+                        <option item-door-material="Door_plastic">Пластик</option>
+                      </select>
+                      <select item-door-number="3" class="calculation__filter-select">
+                        <option item-door-material="none">Выберите Материал</option>
+                        <option item-door-material="Door_bamboo">Бамбук</option>
+                        <option item-door-material="Door_mirror">Зеркало</option>
+                        <option item-door-material="Door_picture">Картинка</option>
+                        <option item-door-material="Door_plastic">Пластик</option>
+                      </select>
+                      <select item-door-number="4" class="calculation__filter-select">
+                        <option item-door-material="none">Выберите Материал</option>
+                        <option item-door-material="Door_bamboo">Бамбук</option>
+                        <option item-door-material="Door_mirror">Зеркало</option>
+                        <option item-door-material="Door_picture">Картинка</option>
+                        <option item-door-material="Door_plastic">Пластик</option>
+                      </select>
+                    </div>
+                    <div class="calculation__filter-block slideOut">
+                      <button type="button" class="btn calculation__filter-btn">Следующий шаг</button>
                     </div>
                   </div>
-                  <!-- конец фильтра ширины-->
-                  <!-- фильтр высоты-->
-                  <div class="calculation__filter-block">
-                    <p class="calculation__filter-title _height-bg">Высота</p>
-                    <div class="calculation__filter-range-wrapper">
-                      <div id="height" class="calculation__filter-range"></div>
+                  <!-- конец шаг 2-->
+                  <!-- шаг 3-->
+                  <div class="calculation__filter-step">
+                    <div class="calculation__filter-block slideOut">
+                      <p>че ни будь из инфы еще</p>
+                    </div>
+                    <div class="calculation__filter-block slideOut">
+                      <p>че ни будь из инфы</p>
+                    </div>
+                    <div class="calculation__filter-block slideOut">
+                      <button type="submit" class="btn calculation__filter-btn">Оформить заказ</button>
                     </div>
                   </div>
-                  <!-- конец фильтра высоты-->
-                  <div class="calculation__filter-block">
-                    <button type="button" class="btn calculation__filter-btn">Следующий шаг</button>
-                  </div>
-                </div>
-                <!-- конец шаг 1-->
-                <!-- шаг 2-->
-                <div class="calculation__filter-step">
-                  <div class="calculation__filter-block slideOut">
-                    <p class="calculation__filter-title _doors-bg">Материалы</p>
-                    <select item-door-number="1" class="calculation__filter-select">
-                      <option item-door-material="none">Выберите Материал</option>
-                      <option item-door-material="Door_bamboo">Бамбук</option>
-                      <option item-door-material="Door_mirror">Зеркало</option>
-                      <option item-door-material="Door_picture">Картинка</option>
-                      <option item-door-material="Door_plastic">Пластик</option>
-                    </select>
-                    <select item-door-number="2" class="calculation__filter-select">
-                      <option item-door-material="none">Выберите Материал</option>
-                      <option item-door-material="Door_bamboo">Бамбук</option>
-                      <option item-door-material="Door_mirror">Зеркало</option>
-                      <option item-door-material="Door_picture">Картинка</option>
-                      <option item-door-material="Door_plastic">Пластик</option>
-                    </select>
-                    <select item-door-number="3" class="calculation__filter-select">
-                      <option item-door-material="none">Выберите Материал</option>
-                      <option item-door-material="Door_bamboo">Бамбук</option>
-                      <option item-door-material="Door_mirror">Зеркало</option>
-                      <option item-door-material="Door_picture">Картинка</option>
-                      <option item-door-material="Door_plastic">Пластик</option>
-                    </select>
-                    <select item-door-number="4" class="calculation__filter-select">
-                      <option item-door-material="none">Выберите Материал</option>
-                      <option item-door-material="Door_bamboo">Бамбук</option>
-                      <option item-door-material="Door_mirror">Зеркало</option>
-                      <option item-door-material="Door_picture">Картинка</option>
-                      <option item-door-material="Door_plastic">Пластик</option>
-                    </select>
-                  </div>
-                  <div class="calculation__filter-block slideOut">
-                    <button type="button" class="btn calculation__filter-btn">Следующий шаг</button>
-                  </div>
-                </div>
-                <!-- конец шаг 2-->
-                <!-- шаг 3-->
-                <div class="calculation__filter-step">
-                  <div class="calculation__filter-block slideOut">
-                    <p>че ни будь из инфы еще</p>
-                  </div>
-                  <div class="calculation__filter-block slideOut">
-                    <p>че ни будь из инфы</p>
-                  </div>
-                  <div class="calculation__filter-block slideOut">
-                    <button type="submit" class="btn calculation__filter-btn">Оформить заказ</button>
-                  </div>
-                </div>
-                <!-- конец шаг 3-->
+                  <!-- конец шаг 3-->
+                </form>
               </div>
             </div>
             <!-- конец блока с фильтрами-->
