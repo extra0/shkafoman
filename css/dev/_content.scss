@@ -7,6 +7,8 @@
 		&-section {
 			@include display(flex);
 			@include justify-content(center);
+			position: relative;
+			z-index: 10;
 		}
 		&-block {
 			&:not(:last-child) {
@@ -252,8 +254,9 @@
 		&-holder {
 			text-align: center;
 			position: relative;
-			left: 76px;
-			top: 67px;
+			left: 255px;
+			top: -20px;
+			margin-left: -350px;
 		}
 	}
 	&__material-holder {
