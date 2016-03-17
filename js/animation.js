@@ -4,10 +4,10 @@ $(function(){
 		depthVal = 50, // начальное значение глубины
 		widthVal = 60, // начальное значение ширины
 		heightVal = 2400, // начальное значение высоты
-
+		radioBtn = $('.calculation__filter-radio'), // радиокнопка выбора дверей
 		nextImg = $('[next-img]'), // следующее подгружаемое изображение 
 		imgs = $('[current-img], [next-img]'), // текущее и следующее изображение
-		materialSelect = $('.calculation__filter-select'), // select выбора материала
+		materialSelect = $('.ui-selectmenu-button'), // select выбора материала
 		materialImg = $('.calculation__material-holder-img'), // picture-holder для материалов
 		stepSection = $('.calculation__filter-step'), // секция шага
 		stepBlock = $('.calculation__filter-block'), // блоки секции шага
@@ -16,12 +16,11 @@ $(function(){
 		stepThree = $('[step-btn="3"]');
 
 	imgChanger(); // вызов функции замены при загрузке
-	selectShow(); // функция показа selectov при загрузке
 
-	$('.calculation__filter-radio').on('change', function(){
+	// изменяем количество дверей радиокнопкой
+	radioBtn.on('change', function(){
 		doorsVal = parseInt($(this).val());
-
-		materialSelect.removeClass('show'); // снимаем класс отображения selectov
+		$('.ui-selectmenu-button').removeClass('show'); // снимаем класс отображения selectov
 		selectShow(); // функция показа selectov
 		imgChanger(); // функция смены изображения шкафа
 
@@ -76,31 +75,37 @@ $(function(){
 	});
 
 	// меняем материалы дверей
-	materialSelect.on('change', function(){
-		var materialDoorNumber = $(this).attr('item-door-number'), // номер двери по порядку слева направо
-			materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
+	$('select').selectmenu({
+		change: function( event, ui ) {
+			var materialDoorNumber = $(this).attr('item-door-number'), // номер двери по порядку слева направо
+				materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
 
-		if (materialDoor == 'none') {
-			materialImg.eq(materialDoorNumber-1).addClass('fadeOut');
-			setTimeout(function(){
-				materialImg.eq(materialDoorNumber-1).attr('src', '');
-			}, 500);
-		} else {
-			materialImg.eq(materialDoorNumber-1).addClass('fadeOut'); // добавляем плавное пропадание
+			if (materialDoor == 'none') {
+				materialImg.eq(materialDoorNumber-1).addClass('fadeOut');
+				setTimeout(function(){
+					materialImg.eq(materialDoorNumber-1).attr('src', '');
+				}, 500);
+			} else {
+				materialImg.eq(materialDoorNumber-1).addClass('fadeOut'); // добавляем плавное пропадание
 
-			setTimeout(function(){
-				materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
-				materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
-			},300);
-			// удаляем класс запуска анимации по окончанию замены
-			setTimeout(function(){ 
-				materialImg.eq(materialDoorNumber-1).removeClass('change');
-			}, 1000);
+				setTimeout(function(){
+					materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
+					materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
+				},300);
+				// удаляем класс запуска анимации по окончанию замены
+				setTimeout(function(){ 
+					materialImg.eq(materialDoorNumber-1).removeClass('change');
+				}, 1000);
 
-			// меняем кратинку двери на 50% работы анимации
-			setTimeout(function(){ 
-				materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
-			},240)
+				// меняем кратинку двери на 50% работы анимации
+				setTimeout(function(){ 
+					materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
+				},240)
+			}
+		},
+		// функция показа selectov при загрузке
+		create: function( event, ui ) {
+			selectShow();
 		}
 	});
 
@@ -108,13 +113,13 @@ $(function(){
 	// функция показа selectov материала
 	function selectShow() {
 		for (var i = 0; i < doorsVal; ++i) { 
-			materialSelect.eq(i).addClass('show');	
+			$('.ui-selectmenu-button').eq(i).addClass('show');	
 		}
 	}
 
 	// функция замены изображения шкафа
 	function imgChanger() {
-		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe/Wardrobe_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
+		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe/Wardrobe_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
 
 		// анимация замены
 		imgs.addClass('change'); // добавляем класс на смену изображений
@@ -225,7 +230,8 @@ $(function(){
 				materialImg.removeClass('fadeOut');
 			}, 600);
 			//ставим на селекты дефолтные значения
-			materialSelect.find('option:nth-child(1)').prop('selected', true);
+			materialSelect.find('option:nth-child(1)').prop('selected', true); // устанавливаем дефолтное значение на селект
+			$('.ui-selectmenu-text').html('Выберите материал'); // в кастомных селектах ставим дефолтное значение
 
 		// клик по 2-му шагу
 		} else if ($(this).attr('step-btn') == 2) {
