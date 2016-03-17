@@ -99,7 +99,7 @@ $(function(){
 
 				// меняем кратинку двери на 50% работы анимации
 				setTimeout(function(){ 
-					materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
+					materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/material/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
 				},240)
 			}
 		},
@@ -119,7 +119,7 @@ $(function(){
 
 	// функция замены изображения шкафа
 	function imgChanger() {
-		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe/Wardrobe_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
+		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
 
 		// анимация замены
 		imgs.addClass('change'); // добавляем класс на смену изображений
