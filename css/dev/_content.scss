@@ -262,18 +262,19 @@
 		height: 100%;
 		&-img {
 			@include position(absolute, null null null 0);
+			@include transition(all 0.4s ease-in-out);
 			&:nth-child(odd) {
 				top: 0;
 				&.change {
-					-webkit-animation: center-top-center 0.6s ease;
-					animation: center-top-center 0.6s ease;
+					-webkit-animation: center-top-center 0.4s ease;
+					animation: center-top-center 0.4s ease;
 				}
 			}
 			&:nth-child(even) {
 				bottom: 0;
 				&.change { 
-					-webkit-animation: center-bottom-center 0.6s ease;
-					animation: center-bottom-center 0.6s ease;
+					-webkit-animation: center-bottom-center 0.4s ease;
+					animation: center-bottom-center 0.4s ease;
 				}
 			}
 			&.fadeOut {

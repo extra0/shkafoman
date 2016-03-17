@@ -86,9 +86,12 @@ $(function(){
 				materialImg.eq(materialDoorNumber-1).attr('src', '');
 			}, 500);
 		} else {
-			materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
-			materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
+			materialImg.eq(materialDoorNumber-1).addClass('fadeOut'); // добавляем плавное пропадание
 
+			setTimeout(function(){
+				materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
+				materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
+			},300);
 			// удаляем класс запуска анимации по окончанию замены
 			setTimeout(function(){ 
 				materialImg.eq(materialDoorNumber-1).removeClass('change');
@@ -97,7 +100,7 @@ $(function(){
 			// меняем кратинку двери на 50% работы анимации
 			setTimeout(function(){ 
 				materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/'+ doorsVal +'-doors/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec2_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
-			},300)
+			},240)
 		}
 	});
 
