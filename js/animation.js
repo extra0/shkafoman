@@ -147,7 +147,7 @@ $(function(){
 				} else {
 					clearInterval(timer); // убираем зацикливание
 				}
-			}, 160);
+			}, 130);
 
 			stepOne.removeClass('active');
 			stepOne.addClass('done');
@@ -166,7 +166,7 @@ $(function(){
 					} else {
 						clearInterval(timer); // убираем зацикливание
 					}
-				}, 160);
+				}, 130);
 			 	stepSection.eq(0).hide(); // убираем блоки первого шага
 			}, 1100);
 
@@ -183,7 +183,7 @@ $(function(){
 				} else {
 					clearInterval(timerwe); // убираем зацикливание
 				}
-			}, 160);
+			}, 130);
 
 			stepTwo.removeClass('active');
 			stepTwo.addClass('done');
@@ -204,7 +204,7 @@ $(function(){
 					} else {
 						clearInterval(timer); // убираем зацикливание
 					}
-				}, 160);
+				}, 130);
 			}, 1000);
 		}
 	});
@@ -248,7 +248,7 @@ $(function(){
 			} else {
 				clearInterval(timer); // убираем зацикливание
 			}
-		}, 160);
+		}, 130);
 
 		// показываем блоки первого шага
 		setTimeout(function(){
@@ -261,7 +261,7 @@ $(function(){
 				} else {
 					clearInterval(timer); // убираем зацикливание
 				}
-			}, 160);
+			}, 130);
 		}, 1000);
 
 		$(this).addClass('active');
