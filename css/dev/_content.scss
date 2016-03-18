@@ -34,7 +34,7 @@
 		}
 		&-img {
 			display: inline-block;
-			margin: 0 0 0 10px;
+			margin: -3px 0 0 10px;
 			opacity: 0;
 			vertical-align: top;
 			@include transition(all 0.4s ease-in-out);
@@ -63,7 +63,7 @@
 				cursor: default;
 			}
 			&.done {
-				color: green;
+				color: #3E4049;
 			}
 		}
 	}
@@ -102,6 +102,9 @@
 			}
 			&._height-bg {
 				background-position: 6px -140px;
+			}
+			&._material-bg {
+				background-position: 6px -180px;
 			}
 		}
 		&-radio {
@@ -229,6 +232,9 @@
 			display: none;
 			width: 100%;
 			margin-bottom: 20px;
+			&-block {
+				margin-bottom: 50px;
+			}
 		}
 	}
 	&__img {
@@ -257,6 +263,9 @@
 			left: 255px;
 			top: -20px;
 			margin-left: -350px;
+		}
+		&-wrapper {
+			overflow: hidden;
 		}
 	}
 	&__material-holder {

@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 
 	var doorsVal = parseInt($('.calculation__filter-radio:checked').val()), // кол-во дверей = отмеченному радиобаттону в html
 		depthVal = 50, // начальное значение глубины
@@ -18,7 +18,7 @@ $(function(){
 	imgChanger(); // вызов функции замены при загрузке
 
 	// изменяем количество дверей радиокнопкой
-	radioBtn.on('change', function(){
+	radioBtn.on('change load', function() {
 		doorsVal = parseInt($(this).val());
 		$('.ui-selectmenu-button').removeClass('show'); // снимаем класс отображения selectov
 		selectShow(); // функция показа selectov
@@ -33,7 +33,7 @@ $(function(){
 		step: 10,
 		min: 40,
 		max: 60,
-		slide: function( event, ui ) {
+		slide: function(event, ui) {
 			depthVal = ui.value;
 			imgChanger();
 		}
@@ -49,7 +49,7 @@ $(function(){
 		step: 10,
 		min: 40,
 		max: 80,
-		slide: function( event, ui ) {
+		slide: function(event, ui) {
 			widthVal = ui.value;
 			imgChanger();
 		}
@@ -65,7 +65,7 @@ $(function(){
 		step: 100,
 		min: 2300,
 		max: 2600,
-		slide: function( event, ui ) {
+		slide: function(event, ui) {
 			heightVal = ui.value;
 			imgChanger();
 		}
@@ -74,57 +74,86 @@ $(function(){
 		suffix: " см"
 	});
 
-	// меняем материалы дверей
-	$('select').selectmenu({
-		change: function( event, ui ) {
-			var materialDoorNumber = $(this).attr('item-door-number'), // номер двери по порядку слева направо
-				materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
+	// добавление картинок к пунктам кастомного селекта
+	$.widget("select.iconselectmenu", $.ui.selectmenu, {
+		_renderItem: function(ul, item) {
+			var li = $("<li>", {
+				text: item.label
+			});
 
-			if (materialDoor == 'none') {
-				materialImg.eq(materialDoorNumber-1).addClass('fadeOut');
-				setTimeout(function(){
-					materialImg.eq(materialDoorNumber-1).attr('src', '');
-				}, 500);
-			} else {
-				materialImg.eq(materialDoorNumber-1).addClass('fadeOut'); // добавляем плавное пропадание
-
-				setTimeout(function(){
-					materialImg.eq(materialDoorNumber-1).removeClass('fadeOut'); 
-					materialImg.eq(materialDoorNumber-1).addClass('change'); // запускаем анимацию
-				},300);
-				// удаляем класс запуска анимации по окончанию замены
-				setTimeout(function(){ 
-					materialImg.eq(materialDoorNumber-1).removeClass('change');
-				}, 1000);
-
-				// меняем кратинку двери на 50% работы анимации
-				setTimeout(function(){ 
-					materialImg.eq(materialDoorNumber-1).attr('src', 'img/items/material/'+ materialDoor +'/'+ materialDoor +'_'+ materialDoorNumber +'_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'.png');
-				},240)
+			if (item.disabled) {
+				li.addClass("ui-state-disabled");
 			}
-		},
-		// функция показа selectov при загрузке
-		create: function( event, ui ) {
-			selectShow();
+
+			$("<span>", {
+					style: item.element.attr("data-style"),
+					"class": "ui-icon " + item.element.attr("data-class")
+				})
+				.appendTo(li);
+
+			return li.appendTo(ul);
 		}
 	});
+
+	// вызов кастомного селекта и его постобработка
+	$("select")
+		.iconselectmenu({
+			width: 280,
+			change: function(event, ui) {
+				var materialDoorNumber = $(this).attr('item-door-number'), // номер двери по порядку слева направо
+					materialDoor = $(this).find('option:selected').attr('item-door-material'); // материал двери
+
+				if (materialDoor == 'none') {
+					materialImg.eq(materialDoorNumber - 1).addClass('fadeOut');
+					setTimeout(function() {
+						materialImg.eq(materialDoorNumber - 1).attr('src', '');
+					}, 500);
+				} else {
+					materialImg.eq(materialDoorNumber - 1).addClass('fadeOut'); // добавляем плавное пропадание
+
+					setTimeout(function() {
+						materialImg.eq(materialDoorNumber - 1).removeClass('fadeOut');
+						materialImg.eq(materialDoorNumber - 1).addClass('change'); // запускаем анимацию
+					}, 300);
+					// удаляем класс запуска анимации по окончанию замены
+					setTimeout(function() {
+						materialImg.eq(materialDoorNumber - 1).removeClass('change');
+					}, 1000);
+
+					// меняем кратинку двери на 50% работы анимации
+					setTimeout(function() {
+						materialImg.eq(materialDoorNumber - 1).attr('src', 'img/items/material/' + materialDoor + '/' + materialDoor + '_' + materialDoorNumber + '_sec' + doorsVal + '_w' + widthVal + '_h' + heightVal / 10 + '.png');
+					}, 240)
+				}
+
+				// меняем изображение материалов в селектах (выбранных пунктах)
+				$(this).next().find('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood');
+				$(this).next().find('.ui-selectmenu-text').addClass($(this).find('option:selected').attr('data-class'));
+			},
+			// функция показа selectov при загрузке
+			create: function(event, ui) {
+				selectShow();
+			}
+		})
+		.iconselectmenu("menuWidget")
+		.addClass("ui-menu-icons customicons");
 
 
 	// функция показа selectov материала
 	function selectShow() {
-		for (var i = 0; i < doorsVal; ++i) { 
-			$('.ui-selectmenu-button').eq(i).addClass('show');	
+		for (var i = 0; i < doorsVal; ++i) {
+			$('.ui-selectmenu-button').eq(i).addClass('show');
 		}
 	}
 
 	// функция замены изображения шкафа
 	function imgChanger() {
-		nextImg.attr('src', 'img/items/'+ doorsVal +'-doors/Wardrobe_sec'+ doorsVal +'_w'+ widthVal +'_h'+ heightVal / 10 +'_d'+ depthVal +'.png');
+		nextImg.attr('src', 'img/items/' + doorsVal + '-doors/Wardrobe_sec' + doorsVal + '_w' + widthVal + '_h' + heightVal / 10 + '_d' + depthVal + '.png');
 
 		// анимация замены
 		imgs.addClass('change'); // добавляем класс на смену изображений
 
-		setTimeout(function(){
+		setTimeout(function() {
 			imgs.removeClass('change'); // убираем класс анимации
 			$('[current-img]').attr('src', $('[next-img]').attr('src')); // делаем замену нового изображения на текущее
 		}, 400);
@@ -132,7 +161,7 @@ $(function(){
 
 
 	// переход на следующий шаг калькулятора по кнопке
-	$('.calculation__filter-btn').on('click', function(){
+	$('.calculation__filter-btn').on('click', function() {
 
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 
@@ -140,14 +169,14 @@ $(function(){
 
 			// убираем блоки 1-го шага
 			var i = 1,
-				timer = setInterval(function(){
-				if (i <= stepSection.eq(0).find('.calculation__filter-block').length) {
-					stepSection.eq(0).find(stepBlock.eq(i-1)).addClass('slideOut');
-					++i;
-				} else {
-					clearInterval(timer); // убираем зацикливание
-				}
-			}, 130);
+				timer = setInterval(function() {
+					if (i <= stepSection.eq(0).find('.calculation__filter-block').length) {
+						stepSection.eq(0).find(stepBlock.eq(i - 1)).addClass('slideOut');
+						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
+					}
+				}, 130);
 
 			stepOne.removeClass('active');
 			stepOne.addClass('done');
@@ -156,18 +185,18 @@ $(function(){
 			stepTwo.prop('disabled', false);
 
 			// показываем блоки второго шага
-			setTimeout(function(){
+			setTimeout(function() {
 
 				var i = 1,
-				 	timer = setInterval(function(){
-					if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
-						stepSection.eq(1).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
-						++i;
-					} else {
-						clearInterval(timer); // убираем зацикливание
-					}
-				}, 130);
-			 	stepSection.eq(0).hide(); // убираем блоки первого шага
+					timer = setInterval(function() {
+						if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
+							stepSection.eq(1).find('.calculation__filter-block:nth-child(' + i + ')').removeClass('slideOut');
+							++i;
+						} else {
+							clearInterval(timer); // убираем зацикливание
+						}
+					}, 130);
+				stepSection.eq(0).hide(); // убираем блоки первого шага
 			}, 1100);
 
 
@@ -176,14 +205,14 @@ $(function(){
 
 			// убираем блоки 2-го шага
 			var i = 1,
-				timerwe = setInterval(function(){
-				if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
-					stepSection.eq(1).find('.calculation__filter-block:nth-child('+i+')').addClass('slideOut');
-					++i;
-				} else {
-					clearInterval(timerwe); // убираем зацикливание
-				}
-			}, 130);
+				timerwe = setInterval(function() {
+					if (i <= stepSection.eq(1).find('.calculation__filter-block').length) {
+						stepSection.eq(1).find('.calculation__filter-block:nth-child(' + i + ')').addClass('slideOut');
+						++i;
+					} else {
+						clearInterval(timerwe); // убираем зацикливание
+					}
+				}, 130);
 
 			stepTwo.removeClass('active');
 			stepTwo.addClass('done');
@@ -192,19 +221,19 @@ $(function(){
 			stepThree.prop('disabled', false);
 
 			// показываем блоки 3-го шага
-			setTimeout(function(){
+			setTimeout(function() {
 				stepSection.eq(1).hide(); // убираем блоки второго шага
 
 				// показываем блоки третьего шага
 				var i = 1,
-				 	timer = setInterval(function(){
-					if (i <= stepSection.eq(2).find('.calculation__filter-block').length) {
-						stepSection.eq(2).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
-						++i;
-					} else {
-						clearInterval(timer); // убираем зацикливание
-					}
-				}, 130);
+					timer = setInterval(function() {
+						if (i <= stepSection.eq(2).find('.calculation__filter-block').length) {
+							stepSection.eq(2).find('.calculation__filter-block:nth-child(' + i + ')').removeClass('slideOut');
+							++i;
+						} else {
+							clearInterval(timer); // убираем зацикливание
+						}
+					}, 130);
 			}, 1000);
 		}
 	});
@@ -212,7 +241,7 @@ $(function(){
 	// переход на предыдущие шаги
 	var stepBtn = $('[step-btn]');
 
-	$('[step-btn]').click(function(){
+	$('[step-btn]').click(function() {
 
 		var stepNumber = $(this).attr('step-btn');
 
@@ -225,15 +254,16 @@ $(function(){
 
 			// убираем картинки материалов
 			materialImg.addClass('fadeOut');
-			setTimeout(function(){
+			setTimeout(function() {
 				materialImg.attr('src', '');
 				materialImg.removeClass('fadeOut');
 			}, 600);
 			//ставим на селекты дефолтные значения
 			materialSelect.find('option:nth-child(1)').prop('selected', true); // устанавливаем дефолтное значение на селект
 			$('.ui-selectmenu-text').html('Выберите материал'); // в кастомных селектах ставим дефолтное значение
+			$('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood');
 
-		// клик по 2-му шагу
+			// клик по 2-му шагу
 		} else if ($(this).attr('step-btn') == 2) {
 			stepThree.prop('disabled', true);
 			stepTwo.removeClass('done');
@@ -241,27 +271,27 @@ $(function(){
 		}
 
 		var i = 1,
-		 	timer = setInterval(function(){
-			if (i <= stepSection.find('.calculation__filter-block').length) {
-				stepSection.find('.calculation__filter-block:nth-child('+i+')').addClass('slideOut');
-				++i;
-			} else {
-				clearInterval(timer); // убираем зацикливание
-			}
-		}, 130);
-
-		// показываем блоки первого шага
-		setTimeout(function(){
-			stepSection.eq(stepNumber-1).show();
-			var i = 1,
-				timer = setInterval(function(){
-				if (i <= stepSection.eq(stepNumber-1).find('.calculation__filter-block').length) {
-					stepSection.eq(stepNumber-1).find('.calculation__filter-block:nth-child('+i+')').removeClass('slideOut');
+			timer = setInterval(function() {
+				if (i <= stepSection.find('.calculation__filter-block').length) {
+					stepSection.find('.calculation__filter-block:nth-child(' + i + ')').addClass('slideOut');
 					++i;
 				} else {
 					clearInterval(timer); // убираем зацикливание
 				}
 			}, 130);
+
+		// показываем блоки первого шага
+		setTimeout(function() {
+			stepSection.eq(stepNumber - 1).show();
+			var i = 1,
+				timer = setInterval(function() {
+					if (i <= stepSection.eq(stepNumber - 1).find('.calculation__filter-block').length) {
+						stepSection.eq(stepNumber - 1).find('.calculation__filter-block:nth-child(' + i + ')').removeClass('slideOut');
+						++i;
+					} else {
+						clearInterval(timer); // убираем зацикливание
+					}
+				}, 130);
 		}, 1000);
 
 		$(this).addClass('active');

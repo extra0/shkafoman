@@ -66,16 +66,17 @@ block content
 							// шаг 2
 							.calculation__filter-step
 								.calculation__filter-block.slideOut
-									p.calculation__filter-title._doors-bg Материалы
-									- for (i = 1; i <= 4; ++i) {
-										select.calculation__filter-select(item-door-number="#{i}")
-											option(item-door-material="none") Выберите Материал
-											option(item-door-material="Door_bamboo") Бамбук
-											option(item-door-material="Door_mirror") Зеркало
-											option(item-door-material="Door_oracal") Оракал
-											option(item-door-material="Door_picture") Картинка
-											option(item-door-material="Door_wood") Дерево
-									- }
+									p.calculation__filter-title._material-bg Материалы
+									.calculation__filter-select-block
+										- for (i = 1; i <= 4; ++i) {
+											select.calculation__filter-select(item-door-number="#{i}")
+												option(data-class="none" item-door-material="none") Выберите Материал
+												option(data-class="bamboo" item-door-material="Door_bamboo") Бамбук
+												option(data-class="mirror" item-door-material="Door_mirror") Зеркало
+												option(data-class="oracal" item-door-material="Door_oracal") Оракал
+												option(data-class="picture" item-door-material="Door_picture") Фотопечать
+												option(data-class="wood" item-door-material="Door_wood") ДСП
+										- }
 								.calculation__filter-block.slideOut
 									button.btn.calculation__filter-btn(type="button") Следующий шаг
 							// конец шаг 2
@@ -91,17 +92,18 @@ block content
 				// конец блока с фильтрами
 				// блок с изображением
 				.col-sm-9
-					.calculation__img-holder
-						// текущие картинки
-						img.calculation__img(src="", next-img)
-						img.calculation__img(src="", current-img)
-						// конец текущие картинки
-						.calculation__material-holder
-							// картинки для материалов дверей
-							img.calculation__material-holder-img(src="")
-							img.calculation__material-holder-img(src="")
-							img.calculation__material-holder-img(src="")
-							img.calculation__material-holder-img(src="")
-							// конец картинки для материалов дверей
+					.calculation__img-wrapper
+						.calculation__img-holder
+							// текущие картинки
+							img.calculation__img(src="", next-img)
+							img.calculation__img(src="", current-img)
+							// конец текущие картинки
+							.calculation__material-holder
+								// картинки для материалов дверей
+								img.calculation__material-holder-img(src="")
+								img.calculation__material-holder-img(src="")
+								img.calculation__material-holder-img(src="")
+								img.calculation__material-holder-img(src="")
+								// конец картинки для материалов дверей
 				// конец блока с изображением 
 	// конец блока калькулятора
