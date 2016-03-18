@@ -114,16 +114,17 @@ $(function() {
 					setTimeout(function() {
 						materialImg.eq(materialDoorNumber - 1).removeClass('fadeOut');
 						materialImg.eq(materialDoorNumber - 1).addClass('change'); // запускаем анимацию
-					}, 300);
+					}, 500);
+
 					// удаляем класс запуска анимации по окончанию замены
 					setTimeout(function() {
 						materialImg.eq(materialDoorNumber - 1).removeClass('change');
 					}, 1000);
 
-					// меняем кратинку двери на 50% работы анимации
+					// меняем кратинку двери
 					setTimeout(function() {
 						materialImg.eq(materialDoorNumber - 1).attr('src', 'img/items/material/' + materialDoor + '/' + materialDoor + '_' + materialDoorNumber + '_sec' + doorsVal + '_w' + widthVal + '_h' + heightVal / 10 + '.png');
-					}, 240)
+					}, 400)
 				}
 
 				// меняем изображение материалов в селектах (выбранных пунктах)
