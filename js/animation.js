@@ -269,6 +269,10 @@ $(function() {
 			stepThree.prop('disabled', true);
 			stepTwo.removeClass('done');
 			stepTwo.prev().find('img').removeClass('done');
+			stepOne.prop('disabled', true);
+			setTimeout(function(){
+				stepOne.prop('disabled', false);
+			}, 1000);
 		}
 
 		var i = 1,

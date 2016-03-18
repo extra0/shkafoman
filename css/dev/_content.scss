@@ -55,9 +55,9 @@
 			&:hover,
 			&.active {
 				color: $bordo;
-				&[disabled] {
-					color: #c1c1c1;
-				}
+				// &[disabled] {
+				// 	color: #c1c1c1;
+				// }
 			}
 			&.active{
 				cursor: default;
