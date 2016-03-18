@@ -264,9 +264,6 @@
 			top: -20px;
 			margin-left: -350px;
 		}
-		&-wrapper {
-			overflow: hidden;
-		}
 	}
 	&__material-holder {
 		@include position(absolute, 0 null null 0);
