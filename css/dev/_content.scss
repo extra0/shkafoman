@@ -321,3 +321,101 @@
 		}
 	}
 }
+// отзывы
+.feedback {
+	&__btn {
+		font-size: 20px;
+		padding: 19px 42px;
+	}
+}
+// блок с фактами
+.fact {
+	padding: 106px 0 60px 0;
+	position: relative;
+	&:before {
+		content: '';
+		background: url(../img/fact_bg.png) 0 0 no-repeat;
+		@include position(absolute, null 0 0 0);
+		width: 1382px;
+		height: 556px;
+		margin: 0 auto;
+		z-index: -1;
+	}
+	&__title {
+		font-size: 35px;
+		margin: 0 0 -10px 50px;
+		line-height: normal;
+		color: $bordo;
+		font-weight: 300;
+	}
+	&__block {
+		border: 1px dashed $bordo;
+		border-radius: 40px;
+		padding: 24px 46px 30px 46px;
+		position: relative;
+		min-height: 203px;
+		margin-bottom: 18px;
+		position: relative;
+		&:before {
+			content: '';
+			background: url(../img/question.png) 0 0 no-repeat;
+			@include position(absolute, -134px null null -166px);
+			width: 71px;
+			height: 309px;
+		}
+	}
+	&__text {
+		color: #3d3f48;
+		margin: 0 -10px 0 0;
+		font-size: 24px;
+		vertical-align: top;
+		line-height: 36px;
+	}
+	&__extra-text {
+		color: #3d3f48;
+	    margin: -3px -30px 0 0;
+	    vertical-align: top;
+	    font-size: 20px;
+	    line-height: 30px;
+	}
+	&__img {
+		display: block;
+		margin: -75px 0 -1px 5px;
+		@include position(absolute, null null 0 null);
+	}
+	&__changer {
+		display: inline-block;
+		color: #000;
+		font-size: 18px;
+		line-height: 20px;
+		border-bottom: 1px dotted;
+		position: relative;
+		font-weight: 300;
+		margin: 0 100px 0 0;
+		&:before {
+			content: '';
+			background: url(../img/spinner.png) 0 0 no-repeat;
+			@include position(absolute, -4px null null -52px);
+			width: 35px;
+			height: 27px;
+		}
+		&:active,
+		&:focus,
+		&:hover {
+			color: #000;
+			border-bottom: 1px dotted transparent;
+			text-decoration: none;
+		}
+	}
+}
+// дополнительные приемущества
+.extra-advantages {
+	background: #f7f6f5;
+	padding: 29px 0 20px 0;
+	&__title {
+		font-weight: bold;
+		color: #3d3f48;
+		font-size: 35px;
+		margin: 0;
+	}
+}

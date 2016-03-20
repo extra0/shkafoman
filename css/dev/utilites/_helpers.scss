@@ -6,6 +6,11 @@
 	text-align: right;
 }
 
+// positions
+.position-static {
+  position: static;
+}
+
 // animation
 @include keyframes(fadeIn) {
   from {
