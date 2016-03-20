@@ -1,3 +1,37 @@
+// блок приемуществ после шапки
+.advantages {
+	padding: 72px 0 57px 0;
+	position: relative;
+	&:before {
+		content: '';
+		background: url(../img/advantages_bg.png) 0 0 no-repeat;
+		@include position(absolute, 0 0 null 0);
+		width: 1225px;
+		margin: 0 auto;
+		height: 310px;
+		text-align: center;
+	}
+	&__img {
+		display: block;
+		margin-bottom: 27px;
+	}
+	&__title {
+		font-size: 25px;
+		font-weight: bold;
+		color: $bordo;
+		margin: 0 0 6px 0;
+		line-height: normal;
+	}
+	&__text {
+		font-size: 15px;
+		line-height: normal;
+		color: #3d3f48;
+		margin: 0;
+		line-height: 22px;
+
+	}
+}
+
 // блок с калькулятором на главной
 .calculation {
 	// шаги калькулятора
