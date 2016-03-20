@@ -12,6 +12,11 @@
 			margin: 0 auto 27px auto;
 		}
 	}
+	.fact {
+		&__text {
+			margin: 0 0 30px 0;
+		}
+	}
 }
 @media (max-width: 540px) {
 	.btn {
@@ -38,6 +43,37 @@
 		}
 		&__phone {
 			margin-bottom: 22px;
+		}
+	}
+	.fact {
+		&__text {
+			font-size: 20px;
+			line-height: 26px;
+		}
+		&__extra-text {
+			font-size: 16px;
+			line-height: 20px;
+			margin: 0;
+		}
+		&__changer {
+			margin: 0 40px 0 0;
+		}
+		&__title {
+			font-size: 24px;
+			margin: 0 0 -7px 20px;
+		}
+		&__block {
+			padding: 24px 20px 30px 20px;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.fact {
+		&__img {
+			margin: -75px 0 -1px -18px;
 		}
 	}
 }
