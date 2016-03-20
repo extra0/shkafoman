@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+	.header {
+		&__section {
+			padding-bottom: 70px;
+		}
+	}
+	.advantages {
+		&__block {
+			text-align: center;
+		}
+		&__img {
+			margin: 0 auto 27px auto;
+		}
+	}
+}
