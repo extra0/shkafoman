@@ -168,6 +168,13 @@ $(function() {
 
 			stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
 
+
+			stepOne.prop('disabled', true);
+			setTimeout(function(){
+				stepOne.prop('disabled', false);
+			}, 1000);
+
+			
 			// убираем блоки 1-го шага
 			var i = 1,
 				timer = setInterval(function() {

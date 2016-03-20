@@ -73,16 +73,19 @@
 .ui-icon.oracal {background-position: 0px -102px!important;}
 .ui-icon.picture {background-position: 0px -153px!important;}
 .ui-icon.wood {background-position: 0px -204px!important;}
+.ui-icon.mirror-flat {background-position: 0px -254px!important;}
 
 .ui-selectmenu-text.bamboo {background-position: 12px 8px!important;}
 .ui-selectmenu-text.mirror {background-position: 12px -41px!important;}
 .ui-selectmenu-text.oracal {background-position: 12px -92px!important;}
 .ui-selectmenu-text.picture {background-position: 12px -143px!important;}
 .ui-selectmenu-text.wood {background-position: 12px -194px!important;}
+.ui-selectmenu-text.mirror-flat {background-position: 12px -246px!important;}
 
 
 .ui-selectmenu-text.bamboo,
 .ui-selectmenu-text.mirror,
+.ui-selectmenu-text.mirror-flat,
 .ui-selectmenu-text.oracal,
 .ui-selectmenu-text.picture,
 .ui-selectmenu-text.wood {
@@ -529,7 +532,7 @@ button.ui-button::-moz-focus-inner {
 	bottom: 0;
 	left: 10px;
 	margin: auto 0;
-	background: url(../img/materials-select.png);
+	background: url(../img/materials-select_2.png);
 	width: 45px;
 	height: 42px;
 }
@@ -625,17 +628,12 @@ button.ui-button::-moz-focus-inner {
 	top: 0;
 	left: 0;
 	display: none;
-	background: rgb(244,239,234); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(244,239,234,1) 0%, rgba(240,237,233,1) 4%, rgba(240,236,232,1) 13%, rgba(238,234,231,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(244,239,234,1) 0%,rgba(240,237,233,1) 4%,rgba(240,236,232,1) 13%,rgba(238,234,231,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(244,239,234,1) 0%,rgba(240,237,233,1) 4%,rgba(240,236,232,1) 13%,rgba(238,234,231,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4efea', endColorstr='#eeeae7',GradientType=0 ); /* IE6-9 */
+	@include gray-bg();
 	font-family: 'Flow';
 	font-weight: bold;
 }
 .ui-selectmenu-menu .ui-menu {
 	overflow: auto;
-	/* Support: IE7 */
 	overflow-x: hidden;
 	padding-bottom: 1px;
 }
@@ -661,11 +659,7 @@ button.ui-button::-moz-focus-inner {
 	outline: none;
 	color: #717679;
 	margin-bottom: 15px;
-	background: rgb(244,239,234); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(244,239,234,1) 0%, rgba(240,237,233,1) 4%, rgba(240,236,232,1) 13%, rgba(238,234,231,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(244,239,234,1) 0%,rgba(240,237,233,1) 4%,rgba(240,236,232,1) 13%,rgba(238,234,231,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(244,239,234,1) 0%,rgba(240,237,233,1) 4%,rgba(240,236,232,1) 13%,rgba(238,234,231,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4efea', endColorstr='#eeeae7',GradientType=0 ); /* IE6-9 */
+	@include gray-bg();	
 }
 .ui-selectmenu-button span.ui-icon {
 	right: 1em;
