@@ -1,0 +1,79 @@
+.header {
+	background: url(../img/header_bg.png) 0 0 no-repeat;
+	&__section {
+		position: relative;
+		&:before {
+			content: '';
+			background: url(../img/city.png) 0 0 no-repeat;
+			@include position(absolute, nll null 0 -160px);
+			width: 876px;
+			height: 482px;
+		}
+	}
+	&__phone {
+		display: inline-block;
+		text-decoration: none;
+		font-size: 40px;
+		color: #fff;
+		font-family: 'Fira Sans';
+		font-weight: 500;
+		background: url(../img/phone.png) 0 0 no-repeat;
+		padding: 19px 0 0 76px;
+		margin-bottom: 61px;
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+		}
+		&-prefix {
+			font-family: 'Fira Sans';
+			font-size: 24px;
+			font-weight: 300;
+			margin: 6px 15px 0 0;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	&__description {
+		&-title {
+			color: #fff;
+			font-size: 46px;
+			margin: 0 0 24px 0;
+			font-weight: bold;
+			line-height: 51px;
+		}
+		&-text {
+			color: #fff;
+			font-weight: 300;
+			font-size: 22px;
+			margin: 0 0 45px 46px;
+			line-height: 32px;
+			img {
+				vertical-align: top;
+			}
+		}
+		&-btn {
+			padding: 19px 27px;
+			margin: 0 0 0 46px;
+		}
+	}
+	&__img {
+		display: block;
+	    position: relative;
+	    z-index: 10;
+	    margin: -129px 0px 0px 8px;
+	    min-width: 485px;
+		&-block {
+			position: relative;
+			&:before {
+				content: '';
+				background: url(../img/header_cupboard.png) 0 0 no-repeat;
+				@include position(absolute, -3px null null 185px);
+				width: 947px;
+				height: 675px;
+				z-index: 1;
+			}
+		}
+	}
+}

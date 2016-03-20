@@ -1,4 +1,23 @@
 header.header
 	.container
-		//- a.header__logo(href="/")
-			img(src="img/logo.png" alt="Site Logo")
+		.header__section
+			.row
+				.col-sm-12
+					// телефон
+					a.header__phone(href="tel:+78126434407") 
+						span.header__phone-prefix +7 812
+						| 643-44-07
+					// конец телефон
+			.row
+				.col-sm-7
+					// блок с текстом
+					.header__description
+						p.header__description-title Шкафинатор сделает вам шкаф-купе.
+						p.header__description-text Мы делаем лучшие шкафы в <img src="img/star.png", alt="star"> Москве и области по самым приемлимым ценам. Мы словно прибыли из будущего для борьбы с некачественными производителями шкафов-купе. Наши сотрудники обладают железными нервами (и не только).
+						a.btn.header__description-btn(href="#!") рассчитать стоимость
+					// конец блока с текстом
+				.col-sm-5
+					// блок с картинкой
+					.header__img-block
+						img.header__img(src="img/header-shkafinator.png", alt="shkafinator")
+					// конец блока с картинкой

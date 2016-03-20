@@ -3,11 +3,10 @@ html {
 }
 body {
     font-family: $main_font;
+    font-weight: 300;
     font-weight: normal;
     height: 100%;
     color: $main_color;
-    height: 2000px;
-    background: #eae8e5 url(../img/calc-bg.png);
 }
 
 label {
@@ -43,6 +42,8 @@ button, input, textarea {
 	@include transition(all 0.1s ease-in-out);
 	&:hover {
 		background: lighten($bordo, 5%);
+		text-decoration: none;
+		color: #fff;
 	}
 	&:active {
 		@include transition(all 0.1s ease-in-out);
