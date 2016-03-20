@@ -45,7 +45,7 @@ $(function() {
 	// слайдер ширины
 	$('#width').slider({
 		range: "min",
-		value: 60,
+		value: 70,
 		step: 10,
 		min: 40,
 		max: 80,
