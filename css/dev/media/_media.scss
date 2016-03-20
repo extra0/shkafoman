@@ -17,10 +17,33 @@
 			margin: 0 0 30px 0;
 		}
 	}
+	.extra-advantages {
+		&__block {
+			margin: 0 0 25px 0;
+			text-align: center;
+			&-title {
+				margin: 0 0 4px 0;
+			}
+			&-text {
+				margin: 0;
+			}
+			&-img {
+				display: block;
+				margin: 8px auto 0 auto;
+			}
+		}
+		&__btn {
+			margin-top: 20px;
+			display: inline-block;
+		}
+	}
 }
 @media (max-width: 540px) {
 	.btn {
 		font-size: 16px;
+	}
+	.title {
+		font-size: 24px;
 	}
 	.header {
 		&__phone {
