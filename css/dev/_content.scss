@@ -413,9 +413,6 @@
 	background: #f7f6f5;
 	padding: 29px 0 63px 0;
 	&__title {
-		font-weight: bold;
-		color: #3d3f48;
-		font-size: 35px;
 		margin: 0 0 44px 0;
 	}
 	&__block {
@@ -441,4 +438,31 @@
 		font-size: 20px;
 		padding: 19px 42px;
 	}
+}
+// блок с картой 
+.map {
+	padding: 28px 0;
+	&__title {
+		margin: 0 0 25px 0;
+	}
+	&__block {
+		width: 100%;
+		max-width: 1352px;
+		margin: 0 auto;
+		padding: 6px;
+		box-shadow: 0 2px 4px rgba(0,0,0,.35);
+		height: 352px;
+		background-color: #fff;
+		@include background-image(linear-gradient(120deg, #fff 0%, #ddd 100%));
+
+		&-inner {
+			width: 100%;
+			height: 100%;
+			border: 1px dashed #b1b0b0;
+		}
+	}
+}
+#map {
+	width: 100%;
+	height: 100%;
 }
