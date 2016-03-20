@@ -1,0 +1,100 @@
+.footer {
+	padding: 15px 0 34px 0;
+	&__text {
+		color: #3d3f48;
+		margin: 0px -20px 0 -17px;
+		font-weight: 300;
+		font-size: 15px;
+	}
+	&__time {
+		color: #3d3f48;
+		font-size: 20px;
+		margin: 0 0 0 -18px;
+	}
+	&__email {
+		font-size: 20px;
+		color: $bordo;
+		display: inline-block;
+		border-bottom: 1px solid;
+		line-height: 22px;
+		margin: 4px 0 0 -16px;
+		&:active,
+		&:focus,
+		&:hover {
+			border-bottom: 1px solid transparent;
+			color: $bordo;
+			font-size: 20px;
+			text-decoration: none;
+		}
+	}
+	&__phone {
+		color: #3d3f48;
+		font-size: 31px;
+		margin: 3px 0 0 -18px;
+		display: inline-block; 
+		&-prefix {
+			font-size: 11px;
+			display: block;
+			margin: 0;
+		}
+		&:active,
+		&:focus,
+		&:hover {
+			color: #3d3f48;
+			text-decoration: none;
+		}
+	}
+	&__btn {
+		font-size: 15px;
+	    padding: 15px 31px;
+	    margin: -3px 0 0 -70px;
+	    display: inline-block;
+	}
+	&__block {
+		margin: 0 -26px 20px 33px;
+		&._static-margin {
+			margin: 0 0 20px 0;
+		}
+		&._email-margin {
+			margin: 0 -26px 20px 33px;
+		}
+		&._phone-margin {
+			margin: 0 -75px 20px 87px;
+		}
+	}
+    &__development {
+    	width: 88px;
+    	height: 35px;
+    	background: url(../img/dev_logo_pas.jpg) 0 0 no-repeat;
+    	margin-top: 7px;
+    	position: relative;
+    	@include transition(all 0.4s ease-in-out);
+    	overflow: hidden;
+    	z-index: 200;
+    	display: inline-block;
+    	&:before {
+    		content: '';
+		    position: absolute;
+		    background: url(../img/dev_logo_active.png) 0 0 no-repeat;
+		    width: 88px;
+		    height: 35px;
+		    top: 0;
+		    left: -110px;
+		    @include transition(all 0.4s ease-in-out);
+    	}
+    	&:after {
+    		content: '';
+    		position: absolute;
+    		background: url(../img/logo_up.png) 0 0 no-repeat;
+    		width: 26px;
+    		height: 0;
+    		top: 0;
+    		left: 19px;
+    		@include transition(all 0.4s ease-in-out);
+    	}
+    	&:hover {
+    		&:after {height: 35px;}
+    		&:before {left: 0}
+    	}
+    }
+}

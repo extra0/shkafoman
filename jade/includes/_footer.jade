@@ -1,3 +1,35 @@
 footer.footer
 	.container
+		.row
+			.col-sm-3
+				.footer__block._static-margin
+					.row
+						.col-sm-4
+							img.footer__img(src="img/footer_case.png", alt="footer-img")
+						.col-sm-8
+							p.footer__text Работаем каждый день
+							p.footer__time c 10<sup>:00</sup> до 20<sup>:00</sup>
+			.col-sm-3
+				.footer__block._email-margin
+					.row
+						.col-sm-4
+							img.footer__img(src="img/footer_email.png", alt="footer-img")
+						.col-sm-8
+							p.footer__text Мы будем рады ответить! :)
+							a.footer__email(href="mailto:iam@shkafinator.ru") iam@shkafinator.ru
+			.col-sm-3
+				.footer__block._phone-margin
+					.row
+						.col-sm-4
+							img.footer__img(src="img/footer_phone.png", alt="footer-img")
+						.col-sm-8
+							a.footer__phone(href="tel:+74956434407")
+								span.footer__phone-prefix +7 (495)
+								| 643-44-07
+			.col-sm-3
+				.footer__block.text-right._static-margin
+					a.footer__btn.btn(href="#!" fancybox) Оформить заказ
+		.row
+			.col-sm-12.text-center
+				a.footer__development(href="http://www.studio-maximus.com" target="_blank")
 include _script
