@@ -13,3 +13,31 @@
 		}
 	}
 }
+@media (max-width: 540px) {
+	.btn {
+		font-size: 16px;
+	}
+	.header {
+		&__phone {
+			font-size: 32px;
+			&-prefix {
+				font-size: 16px;
+			}
+		}
+		&__description {
+			&-title {
+				line-height: normal;
+				font-size: 34px;
+			}
+			&-text {
+				margin: 0 0 45px 0px;
+			}
+			&-btn {
+				margin: 0;
+			}
+		}
+		&__phone {
+			margin-bottom: 22px;
+		}
+	}
+}
