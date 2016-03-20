@@ -167,6 +167,7 @@ $(function() {
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 
 			stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
+			stepSection.eq(1).removeClass('hidden');
 
 
 			stepOne.prop('disabled', true);
@@ -210,6 +211,8 @@ $(function() {
 
 
 		} else if ($('[step-btn].active').attr('step-btn') == 2) {
+
+			stepSection.eq(2).removeClass('hidden');
 
 			// убираем блоки 2-го шага
 			var i = 1,

@@ -35,6 +35,7 @@
 // блок с калькулятором на главной
 .calculation {
 	// шаги калькулятора
+	padding: 51px 0;
 	background: #eae8e5 url(../img/calc-bg.png);
 	&__steps {
 		position: relative;
