@@ -35,7 +35,7 @@
 .calculation {
 	// шаги калькулятора
 	padding: 51px 0;
-	background: #eae8e5 url(../img/calc-bg.png);
+	background: #FBFBFB url(../img/calc-bg.png);
 	&__steps {
 		position: relative;
 		z-index: 2;
@@ -397,6 +397,7 @@
 			@include position(absolute, -4px null null -52px);
 			width: 35px;
 			height: 27px;
+			@include transition(2s 0.4s ease-in-out);
 		}
 		&:active,
 		&:focus,
@@ -404,6 +405,12 @@
 			color: #000;
 			border-bottom: 1px dotted transparent;
 			text-decoration: none;
+		}
+		&:hover {
+			&:before {
+				-webkit-animation: spinner 2.3s linear infinite;
+				animation: spinner 2.3s linear infinite;
+			}
 		}
 	}
 }
