@@ -375,9 +375,14 @@
 			}
 		}
 	}
+	&__master {
+		@include position(absolute, null 310px -21px null);
+	}
 }
 // отзывы
 .feedback {
+	background: #fff url(../img/feedback-bg.png) top center no-repeat;
+	padding: 40px 0;
 	&__btn {
 		font-size: 20px;
 		padding: 19px 42px;

@@ -68,6 +68,21 @@
 			margin-top: 33px;
 		}
 	}
+	.calculation {
+		&__steps {
+			&-section {
+				@include flex-direction(column);
+				text-align: center;
+			}
+			&-block {
+				margin-bottom: 10px;
+				padding-right: 0!important;
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
 }
 @media (max-width: 540px) {
 	.btn {

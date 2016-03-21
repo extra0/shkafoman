@@ -140,13 +140,19 @@ block content
 							img.calculation__material-holder-img(src="")
 							img.calculation__material-holder-img(src="")
 							// конец картинки для материалов дверей
+						// картинка по шагам
+						img.calculation__master(src="img/sh-st-1.png", alt="sh-st-1.png")
+						// конец картинки по шагам
 				// конец блока с изображением 
 	// конец блока калькулятора
 	// отзывы
 	.feedback
-		.container				
-			.text-center
-				a.btn.feedback__btn(href="#order" fancybox) Хочу точно такой же!
+		.container
+			.row
+				.col-sm-12.col-xs-12
+					p.title Подвиги и благодарности
+				.col-sm-12.col-xs-12.text-center
+					a.btn.feedback__btn(href="#order" fancybox) Хочу точно такой же!
 	// конец отзывы
 	// факты
 	.fact
