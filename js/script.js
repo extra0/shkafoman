@@ -20,8 +20,8 @@ $(function() {
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			});
 		myMap.behaviors.disable('scrollZoom');
 
@@ -31,96 +31,96 @@ $(function() {
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6701370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6701370232536, 37.57420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([54.6701370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6701370232536, 37.77440299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6501370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6401370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.81326802337879, 37.48407599999996], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6701370232536, 37.77440299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.1501370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.5501370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.51326802337879, 37.48407599999996], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 
 
@@ -130,96 +130,96 @@ $(function() {
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([54.5701370232536, 37.77420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6701370232536, 36.57420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([54.6701370232536, 36.23420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([54.6701370232536, 34.77440299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.0501370232536, 37.17420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.4401370232536, 37.47420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.86326802337879, 37.68407599999996], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6301370232536, 37.87440299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.6601370232536, 37.17420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.2201370232536, 37.17420299999994], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 			.add(new ymaps.Placemark([55.71326802337879, 37.45407599999996], {
 				hintContent: 'Собственный значок метки'
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
-				iconImageSize: [29, 33],
-				iconImageOffset: [-3, -33]
+				iconImageSize: [28, 40],
+				iconImageOffset: [-3, -40]
 			}))
 
 		myMap.geoObjects.add(myPlacemark);

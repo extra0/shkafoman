@@ -2,7 +2,7 @@ $(function() {
 
 	var doorsVal = parseInt($('.calculation__filter-radio:checked').val()), // кол-во дверей = отмеченному радиобаттону в html
 		depthVal = 50, // начальное значение глубины
-		widthVal = 60, // начальное значение ширины
+		widthVal = 70, // начальное значение ширины
 		heightVal = 2400, // начальное значение высоты
 		radioBtn = $('.calculation__filter-radio'), // радиокнопка выбора дверей
 		nextImg = $('[next-img]'), // следующее подгружаемое изображение 
