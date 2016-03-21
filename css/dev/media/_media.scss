@@ -63,6 +63,11 @@
 			}
 		}
 	}
+	.modal {
+		&__text-holder {
+			margin-top: 33px;
+		}
+	}
 }
 @media (max-width: 540px) {
 	.btn {
@@ -115,6 +120,20 @@
 			padding: 24px 20px 30px 20px;
 		}
 	}
+	.modal {
+		padding: 31px 10px;
+		&__title {
+			margin: 0 0 15px;
+		    font-size: 25px;
+		}
+		&__close {
+			top: 10px;
+			right: 10px;
+		}
+		&__text-holder {
+			display: none;
+		}
+	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.footer {
@@ -135,6 +154,9 @@
 		&__filter-btn {
 			font-size: 18px;
 		}
+	}
+	.modal {
+		padding: 31px 24px 20px 24px;
 	}
 }
 @media (min-width: 992px) and (max-width: 1199px) {
