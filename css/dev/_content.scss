@@ -378,7 +378,16 @@
 		}
 	}
 	&__master {
-		@include position(absolute, null 310px -21px null);
+		&.step-1 {
+			@include position(absolute, null 240px -21px null);
+		}
+		&.step-2 {
+			@include position(absolute, null null -21px -210px);
+		}
+		&.step-3 {
+			@include position(absolute, null null -21px 150px);
+		}
+		
 	}
 }
 // отзывы
@@ -449,6 +458,9 @@
 				margin: 4px 0 0 0;
 				font-family: 'Flow';
 			}
+			&-bg {
+
+			}
 		}
 		&-value {
 			position: relative;
@@ -506,7 +518,7 @@
 				border: 2px dashed #d0d0d1;
 				border-radius: 20px;
 				padding: 11px 5px 12px 22px;
-				margin: 0 69px 0 -30px;
+				margin: 0 35px 0 -15px;
 				&-text {
 					margin: 0 0 4px 2px;
 					font-size: 18px;
@@ -527,6 +539,7 @@
 		&-block {
 			width: 400px;
 			height: 440px;
+			overflow: hidden;
 			padding: 25px;
 			background: #e9e9eb;
 			box-shadow: 0 0 5px rgba(0,0,0,.4);

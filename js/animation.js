@@ -13,7 +13,8 @@ $(function() {
 		stepBlock = $('.calculation__filter-block'), // блоки секции шага
 		stepOne = $('[step-btn="1"]'), // шаги переходов 
 		stepTwo = $('[step-btn="2"]'),
-		stepThree = $('[step-btn="3"]');
+		stepThree = $('[step-btn="3"]'),
+		master = $('.calculation__master'); // картинка мастера на калькуляторе
 
 	imgChanger(); // вызов функции замены при загрузке
 
@@ -164,6 +165,17 @@ $(function() {
 	// переход на следующий шаг калькулятора по кнопке
 	$('.calculation__filter-btn').on('click', function() {
 
+		var actualStep = parseInt($('[step-btn].active').attr('step-btn'));
+
+		// замена картинки мастера
+		master.fadeOut(400);
+		setTimeout(function(){
+			master.removeClass('step-'+ actualStep);
+			master.addClass('step-'+ (actualStep + 1));
+			master.attr('src', 'img/sh-st-'+ (actualStep + 1)+'.png');
+			master.fadeIn(400);
+		}, 1000);
+
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 
 			setTimeout(function(){
@@ -171,7 +183,6 @@ $(function() {
 				stepSection.eq(1).removeClass('hidden');
 			}, 1200);
 			
-
 
 			stepOne.prop('disabled', true);
 			setTimeout(function(){
@@ -261,7 +272,16 @@ $(function() {
 
 	$('[step-btn]').click(function() {
 
-		var stepNumber = $(this).attr('step-btn');
+		var stepNumber = parseInt($(this).attr('step-btn'));
+
+		// замена картинки мастера
+		master.fadeOut(400);
+		setTimeout(function(){
+			master.removeClass('step-2 step-1 step-3');
+			master.addClass('step-'+ (stepNumber));
+			master.attr('src', 'img/sh-st-'+ (stepNumber)+'.png');
+			master.fadeIn(400);
+		}, 1000);
 
 		setTimeout(function(){
 			stepSection.eq(1).addClass('hidden');

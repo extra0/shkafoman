@@ -16,7 +16,11 @@ $(function() {
 	// слайдер отзывов
 	$('.feedback__slider').bxSlider({
 		pager: false,
-		mode: 'fade'
+		mode: 'fade',
+		autoDelay: 1000,
+		onSlideBefore() {
+			
+		}
 	});
 
 	// яндекс карта 

@@ -141,7 +141,7 @@ block content
 							img.calculation__material-holder-img(src="")
 							// конец картинки для материалов дверей
 						// картинка по шагам
-						img.calculation__master(src="img/sh-st-1.png", alt="sh-st-1.png")
+						img.calculation__master.step-1(src="img/sh-st-1.png", alt="sh-st-1.png")
 						// конец картинки по шагам
 				// конец блока с изображением 
 	// конец блока калькулятора
@@ -202,8 +202,48 @@ block content
 												p.feedback__slider-description-date 22 Август, 2015
 							// конец одного слайда
 							li.feedback__slider-item
-
-							li.feedback__slider-item
+								.col-sm-4
+									// блок с картинками работы
+									.feedback__gallery
+										- for (i=1; i<=3; ++i) {
+											.feedback__gallery-block
+												a(href="img/content/g#{i}.jpg" fancybox rel="gallery_1")
+													img.feedback__gallery-img(src="img/content/g#{i}.jpg", alt="")
+										- }
+									// конец блока с картинкам работы
+								.col-sm-8
+									.feedback__slider-description
+										img.feedback__slider-description-bg(src="img/slide-bg.png", alt="")
+										.feedback__slider-description-block
+											p.feedback__slider-description-title Шкафинатору
+												img(src="img/heart.png", alt="")
+											.feedback__slider-value
+												.row
+													.col-sm-6
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 4
+															p.feedback__slider-value-text Двери
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 40см
+															p.feedback__slider-value-text Ширина
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 70см
+															p.feedback__slider-value-text Глубина
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 2700см
+															p.feedback__slider-value-text Высота
+													.col-sm-6
+														.feedback__slider-value-total
+															p.feedback__slider-value-total-text К оплате:
+															p.feedback__slider-value-total-price(replaced-number) 124000
+																span.rubl a
+											p.feedback__slider-description-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis assumenda itaque omnis, minus est molestias facere blanditiis aliquid ut aspernatur?
+											.col-sm-7
+												p.feedback__slider-description-author
+													img(src="img/social.png", alt="")
+													| Мария Кравченко
+											.col-sm-5
+												p.feedback__slider-description-date 22 Август, 2015
 					// конец блока со слайдером
 			.row
 				.col-sm-12.col-xs-12.text-center
