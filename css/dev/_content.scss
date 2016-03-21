@@ -96,6 +96,12 @@
 			}
 			&.done {
 				color: #3E4049;
+				&[disabled] {
+					color: #3E4049;
+				}
+			}
+			&[disabled] {
+				color: #c1c1c1;
 			}
 		}
 	}
@@ -369,6 +375,7 @@
 		font-size: 24px;
 		vertical-align: top;
 		line-height: 36px;
+		display: none;
 	}
 	&__extra-text {
 		color: #3d3f48;
@@ -376,6 +383,7 @@
 	    vertical-align: top;
 	    font-size: 20px;
 	    line-height: 30px;
+	    display: none;
 	}
 	&__img {
 		display: block;
