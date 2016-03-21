@@ -257,7 +257,7 @@ $(function() {
 			setTimeout(function(){
 				text.eq(i - 1).fadeIn(400);
 				extraText.eq(i - 1).fadeIn(400);
-			}, 500);
+			}, 550);
 			i++;
 		} else {
 			i = 1;
@@ -266,7 +266,7 @@ $(function() {
 			setTimeout(function(){
 				text.eq(0).fadeIn(400);
 				extraText.eq(0).fadeIn(400);
-			}, 500);
+			}, 550);
 		}
 		return false;
 	});

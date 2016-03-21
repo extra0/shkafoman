@@ -13,7 +13,10 @@
 	}
 	&__img {
 		display: block;
-		margin-bottom: 27px;
+		margin-bottom: 17px;
+		&-wrapper {
+			min-height: 86px;
+		}
 	}
 	&__title {
 		font-size: 25px;
