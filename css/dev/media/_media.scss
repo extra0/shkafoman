@@ -62,6 +62,9 @@
 				margin: 6px 10px 0 0;
 			}
 		}
+		&__text {
+			margin: 0;
+		}
 	}
 	.modal {
 		&__text-holder {
@@ -81,6 +84,9 @@
 					display: none;
 				}
 			}
+		}
+		&__filter-block {
+			max-width: 90%;
 		}
 	}
 }
