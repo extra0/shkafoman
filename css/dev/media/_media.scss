@@ -85,8 +85,19 @@
 				}
 			}
 		}
-		&__filter-block {
-			max-width: 90%;
+		&__filter {
+			margin: 41px 0 0 0;
+		}
+		&__material-holder-img,
+		&__img {
+			max-width: 70%;
+			&[current-img] {
+				margin: 0;
+			}
+		}
+		&__img-holder {
+			top: 0;
+			left: 290px;
 		}
 	}
 }
