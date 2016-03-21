@@ -146,7 +146,7 @@ block content
 				// конец блока с изображением 
 	// конец блока калькулятора
 	// отзывы
-	.feedback
+	.feedback.hidden-xs
 		.container
 			.row
 				.col-sm-12.col-xs-12
@@ -160,8 +160,12 @@ block content
 							li.feedback__slider-item
 								.col-sm-4
 									// блок с картинками работы
-									.feedback__slider-polaroid
-										
+									.feedback__gallery
+										- for (i=1; i<=3; ++i) {
+											.feedback__gallery-block
+												a(href="img/content/g#{i}.jpg" fancybox rel="gallery_1")
+													img.feedback__gallery-img(src="img/content/g#{i}.jpg", alt="")
+										- }
 									// конец блока с картинкам работы
 								.col-sm-8
 									.feedback__slider-description
