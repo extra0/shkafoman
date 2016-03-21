@@ -113,11 +113,18 @@ block content
 							// шаг 3
 							.calculation__filter-step.hidden
 								.calculation__filter-block.slideOut
-									p че ни будь из инфы еще
+									p.calculation__filter-text Принято! Ваш шкаф будет стоить:
+									p.calculation__filter-old-price(replaced-number) 24400
+									span.rubl a
 								.calculation__filter-block.slideOut
-									p че ни будь из инфы
+									p.calculation__filter-text Оформляйте прямо сейчас и мы скинем 5% от цены! Стоимость будет:
+									p.calculation__filter-price(replaced-number) 21960
+									span.rubl a
 								.calculation__filter-block.slideOut
-									button.btn.calculation__filter-btn(type="submit") Оформить заказ
+									input.calculation__filter-input(type="text" placeholder="Ваше имя")
+									input.calculation__filter-input(type="text" placeholder="Контактный телефон" mask)
+								.calculation__filter-block.slideOut
+									button.btn.calculation__filter-btn(type="submit") Заказать сейчас
 							// конец шаг 3
 				// конец блока с фильтрами
 				// блок с изображением

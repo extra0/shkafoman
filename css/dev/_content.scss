@@ -273,6 +273,53 @@
 				margin-bottom: 50px;
 			}
 		}
+		&-text {
+			margin: 0 0 -5px 0;
+			font-size: 18px;
+			color: #3b3b3a;
+		}
+		&-old-price {
+			font-weight: bold;
+			color: #3b3b3a;
+			font-size: 34px;
+			margin: 0 0 26px 0;
+			display: inline-block;
+			line-height: normal;
+			& + .rubl {
+				@extend .calculation__filter-old-price;
+				margin-left: 10px;
+
+			}
+		}
+		&-price {
+			font-size: 44px;
+			color: $bordo;
+			font-weight: bold;
+			display: inline-block;
+			line-height: normal;
+			margin: 0 0 27px;
+			& + .rubl {
+				@extend .calculation__filter-price;
+				margin-left: 10px;
+			}
+		}
+		&-input {
+			width: 91%;
+			margin-bottom: 14px;
+			height: 47px;
+			line-height: 51px;
+			padding: 0 24px;
+			border: 1px solid rgba(0,0,0,.1);
+			border-radius: 2px 0 0 / 4px 0 0;
+			background-color: #fff;
+			box-shadow: 0 1px 3px rgba(41,35,32,.1), inset 0 0 7px rgba(0,0,0,.15);
+			font-family: 'Flow';
+			font-size: 18px;
+			color: #7a7978;
+			&:last-child {
+				margin-bottom: 33px;
+			}
+		}
 	}
 	&__img {
 		display: inline-block;
@@ -364,6 +411,7 @@
 		min-height: 203px;
 		margin-bottom: 18px;
 		position: relative;
+		@include transition(all 0.4s ease-in-out);
 		&:before {
 			content: '';
 			background: url(../img/question.png) 0 0 no-repeat;
