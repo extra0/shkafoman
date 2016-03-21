@@ -12,6 +12,24 @@
     <title>Шкафинатор</title>
   </head>
   <body>
+    <div id="order" class="modal">
+      <div class="modal__close"></div>
+      <form action="#order">
+        <div class="col-sm-4">
+          <p class="modal__title">Заказать шкаф</p>
+          <input type="text" placeholder="Ваше имя" class="modal__input">
+          <input type="text" mask placeholder="Ваше имя" class="modal__input">
+          <button type="submit" class="btn modal__submit">Заказать сейчас</button>
+        </div>
+        <div class="col-sm-3"><img src="img/modal-shkafinator.png" alt="modal-shkafinator" class="modal__img"></div>
+        <div class="col-sm-5">
+          <div class="modal__text-holder">
+            <p class="modal__text">Вы всего в минуте от того, чтобы заказать замечательный шкаф, который прослужит вам долгие годы.</p>
+            <p class="modal__text">Заполните форму и мы перезвоним вам в кратчайшие сроки.</p>
+          </div>
+        </div>
+      </form>
+    </div>
     <div class="main-wrapper">
       <header class="header">
         <div class="container">
@@ -237,7 +255,7 @@
       <!-- отзывы-->
       <div class="feedback">
         <div class="container">				
-          <div class="text-center"><a href="#" class="btn feedback__btn">Хочу точно такой же!</a></div>
+          <div class="text-center"><a href="#order" fancybox class="btn feedback__btn">Хочу точно такой же!</a></div>
         </div>
       </div>
       <!-- конец отзывы-->
@@ -327,7 +345,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12 text-center"><a href="#!" fancybox class="btn extra-advantages__btn">Заказать шкаф-купе</a></div>
+            <div class="col-sm-12 text-center"><a href="#order" fancybox class="btn extra-advantages__btn">Заказать шкаф-купе</a></div>
           </div>
         </div>
       </div>
@@ -383,7 +401,7 @@
             </div>
           </div>
           <div class="col-sm-4 col-lg-3">
-            <div class="footer__block text-right _static-margin"><a href="#!" fancybox class="footer__btn btn">Оформить заказ</a></div>
+            <div class="footer__block text-right _static-margin"><a href="#order" fancybox class="footer__btn btn">Оформить заказ</a></div>
           </div>
         </div>
         <div class="row">

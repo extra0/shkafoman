@@ -37,7 +37,7 @@
 // блок с калькулятором на главной
 .calculation {
 	// шаги калькулятора
-	padding: 51px 0;
+	padding: 51px 0 0 0;
 	background: #FBFBFB url(../img/calc-bg.png);
 	&__steps {
 		position: relative;
@@ -535,4 +535,57 @@
 #map {
 	width: 100%;
 	height: 100%;
+}
+// модальные окна
+#order {
+	max-width: 970px;
+}
+.modal {
+	background: #eae8e5;
+	display: none;
+	padding: 31px 24px 0px 24px;
+	position: relative;
+	@include clearfix;
+	&__title {
+		margin: 0 0 30px;
+		font-weight: bold;
+		font-size: 35px;
+		color: #3e4049;
+	}
+	&__input {
+		@extend .calculation__filter-input;
+		width: 100%;
+	}
+	&__img {
+		display: block;
+		margin: -39px 0 -1px 0px;
+	}
+	&__submit {
+		width: 100%;
+		padding: 17px 0;
+		margin-top: 6px;
+	}
+	&__text {
+		margin: 0 0 27px 0;
+		font-size: 18px;
+		color: #3d3f48;
+		&-holder {
+			margin-top: 73px;
+		}
+	}
+	&__close {
+		@include position(absolute, 20px 20px null null);
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		background: url(../img/close-btn.png) 0 0 no-repeat;
+		z-index: 10;
+		@include transition(all 0.4s ease-in-out);
+		&:hover {
+			@include transform(rotate(180deg));
+		}
+	}
+}
+.fancybox-inner {
+	overflow: visible!important;
 }

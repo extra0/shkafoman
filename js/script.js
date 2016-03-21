@@ -1,7 +1,14 @@
 $(function() {
 
 	// вызов фенсибокса
-	$('[fancybox]').fancybox();
+	$('[fancybox]').fancybox({
+		closeBtn: false
+	});
+
+	// закрываем модальное
+	$('.modal__close').click(function(){
+		$.fancybox.close();
+	});
 
 	//  маска на телефон
 	$('[mask]').mask('+7 (999) 999-99-99');
