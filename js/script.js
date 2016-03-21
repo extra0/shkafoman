@@ -13,6 +13,12 @@ $(function() {
 	//  маска на телефон
 	$('[mask]').mask('+7 (999) 999-99-99');
 
+	// слайдер отзывов
+	$('.feedback__slider').bxSlider({
+		pager: false,
+		mode: 'fade'
+	});
+
 	// яндекс карта 
 	ymaps.ready(function() {
 		var myMap = new ymaps.Map('map', {

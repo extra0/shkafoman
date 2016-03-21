@@ -381,11 +381,137 @@
 }
 // отзывы
 .feedback {
-	background: #fff url(../img/feedback-bg.png) top center no-repeat;
-	padding: 40px 0;
+	background: #fff;
+	padding: 69px 0 0px 0;
 	&__btn {
 		font-size: 20px;
 		padding: 19px 42px;
+	}
+	&__slider {
+		&-block {
+			margin-bottom: 30px;
+		}
+		&-item {
+			&-bg {
+				float: right;
+				margin: 0 40px 0 0;
+			}
+		}
+		&-description {
+			&-block {
+				@include position(absolute, 0 null null 0);
+				padding: 32px 74px 30px 74px;
+				margin-left: 103px;
+			}	
+			&-title {
+				color: #3d3f48;
+				font-size: 44px;
+				margin: 0 0 55px 0;
+				border-bottom: 1px dashed #c5c5c2;
+				padding-bottom: 10px;
+				font-family: 'BadScript';
+				img {
+					display: inline-block;
+					margin-left: 10px;	
+				}
+			}
+			&-text {
+				font-size: 18px;
+				font-family: 'Flow';
+				border-bottom: 1px dashed #c5c5c2;
+				color: #3d3f48;
+				font-weight: bold;
+				padding-bottom: 17px;
+				margin: 0 0 23px -30px;
+				padding-left: 30px;
+			}
+			&-author {
+				font-size: 20px;
+				color: #2d578a;
+				margin: 0 0 0 -20px;
+				img {
+					display: inline-block;
+					margin-right: 10px;
+				}
+			}
+			&-date {
+				text-align: right;
+				font-size: 18px;
+				color: #3d3f48;
+				margin: 4px 0 0 0;
+				font-family: 'Flow';
+			}
+		}
+		&-value {
+			position: relative;
+			margin: 0 0 40px -18px;
+			&:before {
+				content: '';
+				background: url(../img/data-bg.png) 0 0 no-repeat;
+				@include position(absolute, -40px null null -60px);
+				width: 568px;
+				height: 206px;
+			}
+			&-block {
+				padding-left: 20px;
+				position: relative;
+				margin-bottom: 19px;
+				&:before {
+					content: '';
+					background: url(../img/filter-sprite.png) no-repeat;
+					@include position(absolute, 11px null null -28px);
+					width: 35px;
+					height: 30px;
+				}
+				&:nth-child(1){
+					&:before {
+						background-position: 6px 3px;
+					}
+				}
+				&:nth-child(2){
+					&:before {
+						background-position: 6px -44px;
+					}
+				}
+				&:nth-child(3){
+					&:before {
+						background-position: 6px -94px;
+					}
+				}
+				&:nth-child(4){
+					&:before {
+						background-position: 6px -140px;
+					}
+				}
+			}
+			&-number {
+				font-size: 22px;
+				margin: 4px 0 -4px 0;
+				color: #3d3f48;
+			}
+			&-text {
+				font-size: 15px;
+				margin: 0;
+				color: #3d3f48;
+			}
+			&-total {
+				border: 2px dashed #d0d0d1;
+				border-radius: 20px;
+				padding: 11px 5px 12px 22px;
+				margin: 0 69px 0 -30px;
+				&-text {
+					margin: 0 0 4px 2px;
+					font-size: 18px;
+					color: #3e4049;
+				}
+				&-price {
+					font-size: 35px;
+					font-weight: bold;
+					color: $bordo;
+					margin: 0;
+				}
+			}
+		}
 	}
 }
 // блок с фактами
@@ -395,11 +521,11 @@
 	&:before {
 		content: '';
 		background: url(../img/fact_bg.png) 0 0 no-repeat;
-		@include position(absolute, null 0 0 0);
+		@include position(absolute, null 0 -60px 0);
 		width: 1382px;
 		height: 556px;
 		margin: 0 auto;
-		z-index: -1;
+		z-index: 0;
 	}
 	&__title {
 		font-size: 35px;
@@ -488,6 +614,8 @@
 .extra-advantages {
 	background: #f7f6f5;
 	padding: 29px 0 63px 0;
+	position: relative;
+	z-index: 2;
 	&__title {
 		margin: 0 0 44px 0;
 	}

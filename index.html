@@ -17,8 +17,8 @@
       <form action="#order">
         <div class="col-md-4 col-sm-6">
           <p class="modal__title">Заказать шкаф</p>
-          <input type="text" placeholder="Ваше имя" class="modal__input">
-          <input type="text" mask placeholder="Ваше имя" class="modal__input">
+          <input type="text" required placeholder="Ваше имя" class="modal__input">
+          <input type="text" mask required placeholder="Ваше имя" class="modal__input">
           <button type="submit" class="btn modal__submit">Заказать сейчас</button>
         </div>
         <div class="col-md-3 hidden-sm hidden-xs"><img src="img/modal-shkafinator.png" alt="modal-shkafinator" class="modal__img"></div>
@@ -224,8 +224,8 @@
                       <p replaced-number class="calculation__filter-price">21960</p><span class="rubl">a</span>
                     </div>
                     <div class="calculation__filter-block slideOut">
-                      <input type="text" placeholder="Ваше имя" class="calculation__filter-input">
-                      <input type="text" placeholder="Контактный телефон" mask class="calculation__filter-input">
+                      <input type="text" required placeholder="Ваше имя" class="calculation__filter-input">
+                      <input type="text" required placeholder="Контактный телефон" mask class="calculation__filter-input">
                     </div>
                     <div class="calculation__filter-block slideOut">
                       <button type="submit" class="btn calculation__filter-btn">Заказать сейчас</button>
@@ -261,6 +261,71 @@
             <div class="col-sm-12 col-xs-12">
               <p class="title">Подвиги и благодарности</p>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12">
+              <!-- блок со слайдером-->
+              <div class="feedback__slider-block">
+                <ul class="feedback__slider">
+                  <!-- 1 слайд-->
+                  <li class="feedback__slider-item">
+                    <div class="col-sm-4">
+                      <!-- блок с картинками работы-->
+                      <div class="feedback__slider-polaroid"></div>
+                      <!-- конец блока с картинкам работы-->
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="feedback__slider-description"><img src="img/slide-bg.png" alt="" class="feedback__slider-description-bg">
+                        <div class="feedback__slider-description-block">
+                          <p class="feedback__slider-description-title">Шкафинатору<img src="img/heart.png" alt=""></p>
+                          <div class="feedback__slider-value">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="feedback__slider-value-block col-sm-6">
+                                  <p class="feedback__slider-value-number">3</p>
+                                  <p class="feedback__slider-value-text">Двери</p>
+                                </div>
+                                <div class="feedback__slider-value-block col-sm-6">
+                                  <p class="feedback__slider-value-number">50см</p>
+                                  <p class="feedback__slider-value-text">Ширина</p>
+                                </div>
+                                <div class="feedback__slider-value-block col-sm-6">
+                                  <p class="feedback__slider-value-number">50см</p>
+                                  <p class="feedback__slider-value-text">Глубина</p>
+                                </div>
+                                <div class="feedback__slider-value-block col-sm-6">
+                                  <p class="feedback__slider-value-number">2500см</p>
+                                  <p class="feedback__slider-value-text">Высота</p>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="feedback__slider-value-total">
+                                  <p class="feedback__slider-value-total-text">К оплате:</p>
+                                  <p replaced-number class="feedback__slider-value-total-price">24000<span class="rubl">a</span></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="feedback__slider-description-text">Давно искала возможность заказать для дома шкаф. Пришло время! Я бы сказала пришел Шкафовский - мой супергерой! :)</p>
+                          <div class="col-sm-7">
+                            <p class="feedback__slider-description-author"><img src="img/social.png" alt="">Мария Кравченко</p>
+                          </div>
+                          <div class="col-sm-5">
+                            <p class="feedback__slider-description-date">22 Август, 2015</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- конец одного слайда-->
+                  <li class="feedback__slider-item"></li>
+                  <li class="feedback__slider-item"></li>
+                </ul>
+              </div>
+              <!-- конец блока со слайдером-->
+            </div>
+          </div>
+          <div class="row">
             <div class="col-sm-12 col-xs-12 text-center"><a href="#order" fancybox class="btn feedback__btn">Хочу точно такой же!</a></div>
           </div>
         </div>
@@ -277,13 +342,17 @@
           <div class="fact__block">
             <div class="row">
               <div class="col-md-7 col-sm-8">
+                <!-- текст факта слева-->
                 <p class="fact__text">Шкаф появился в средние века в феодальной Европе. Долгое время он носил четкий след своего прародителя - сундука и имел ручки на боковых стенках. Одежда в нем хранилась только на полках.</p>
+                <!-- конец текст факта слева-->
                 <p class="fact__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quisquam ex officiis officia ab ipsam! Nam fuga commodi ea consequatur.</p>
                 <p class="fact__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nisi veniam ipsam iure ad doloribus doloremque minima maiores laboriosam pariatur at, labore eum molestiae modi omnis maxime ea officia eos?</p>
               </div>
               <div class="col-md-2 hidden-xs hidden-sm position-static"><img src="img/fact_shkafinator.png" alt="fact_shkafinator" class="fact__img"></div>
               <div class="col-md-3 col-sm-4">
+                <!-- текст справа-->
                 <p class="fact__extra-text">А наша компания появилась совсем недавно, что в общем-то, очень хорошо. Ведь кому нужен шкаф в виде чемодана?</p>
+                <!-- конец текста страва-->
                 <p class="fact__extra-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sed assumenda quo accusamus, labore molestiae dolor possimus qui voluptates quidem aliquam libero asperiores reprehenderit odit aperiam iure tempora neque deserunt.</p>
                 <p class="fact__extra-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eaque error, tempora itaque cumque nulla eveniet totam, consectetur quis provident.</p>
               </div>
@@ -305,15 +374,17 @@
           </div>
           <div class="row">
             <div class="col-sm-6">
+              <!-- блок 1-го приемущества-->
               <div class="extra-advantages__block">
                 <div class="row">
                   <div class="col-sm-3 col-lg-2"><img src="img/ext_advantages_1.png" alt="ext_advantages" class="extra-advantages__block-img"></div>
                   <div class="col-sm-9 col-lg-10">
                     <p class="extra-advantages__block-title">Материалы высокого качества</p>
-                    <p class="extra-advantages__block-text">Материалы, из которых изготавливается шкаф, проходят строгую проверку качества. </p>
+                    <p class="extra-advantages__block-text">Материалы, из которых изготавливается шкаф, проходят строгую проверку качества.</p>
                   </div>
                 </div>
               </div>
+              <!-- конец блока 1 приемущества -->
             </div>
             <div class="col-sm-6">
               <div class="extra-advantages__block">

@@ -36,6 +36,7 @@
       -o-transform: translatez(0);
       transform: translatez(0);
       box-sizing: content-box;
+      padding-bottom: 20px;
 }
 
 .bx-wrapper .bx-pager,
@@ -98,21 +99,23 @@
 
 .bx-wrapper .bx-prev {
   left: 10px;
-  background: url(../img/slider_arrow.png) no-repeat 0 0;
+  background: url(../img/sl-arrow.png) no-repeat 0 0;
   @include transform(rotate(180deg));
 }
 
 .bx-wrapper .bx-next {
   right: 10px;
-  background: url(../img/slider_arrow.png) no-repeat 0 0;
+  background: url(../img/sl-arrow.png) no-repeat 0 0;
 }
 
 .bx-wrapper .bx-prev:hover {
   opacity: 1;
+  background: url(../img/sl-arrow-active.png) no-repeat 0 0;
 }
 
 .bx-wrapper .bx-next:hover {
   opacity: 1;
+  background: url(../img/sl-arrow-active.png) no-repeat 0 0;
 }
 
 .bx-wrapper .bx-controls-direction a {
@@ -120,12 +123,12 @@
   top: 50%;
   margin-top: -16px;
   outline: 0;
-  width: 31px;
-  height: 31px;
+  width: 27px;
+  height: 50px;
   text-indent: -9999px;
   z-index: 9999;
   opacity: 0.8;
-  @include transition(opacity 0.4s ease-in-out);
+  @include transition(all 0.4s ease-in-out);
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {

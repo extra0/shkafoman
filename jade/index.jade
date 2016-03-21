@@ -120,8 +120,8 @@ block content
 									p.calculation__filter-price(replaced-number) 21960
 									span.rubl a
 								.calculation__filter-block.slideOut
-									input.calculation__filter-input(type="text" placeholder="Ваше имя")
-									input.calculation__filter-input(type="text" placeholder="Контактный телефон" mask)
+									input.calculation__filter-input(type="text" required placeholder="Ваше имя")
+									input.calculation__filter-input(type="text" required placeholder="Контактный телефон" mask)
 								.calculation__filter-block.slideOut
 									button.btn.calculation__filter-btn(type="submit") Заказать сейчас
 							// конец шаг 3
@@ -151,6 +151,57 @@ block content
 			.row
 				.col-sm-12.col-xs-12
 					p.title Подвиги и благодарности
+			.row
+				.col-sm-12.col-xs-12
+					// блок со слайдером
+					.feedback__slider-block
+						ul.feedback__slider
+							// 1 слайд
+							li.feedback__slider-item
+								.col-sm-4
+									// блок с картинками работы
+									.feedback__slider-polaroid
+										
+									// конец блока с картинкам работы
+								.col-sm-8
+									.feedback__slider-description
+										img.feedback__slider-description-bg(src="img/slide-bg.png", alt="")
+										.feedback__slider-description-block
+											p.feedback__slider-description-title Шкафинатору
+												img(src="img/heart.png", alt="")
+											.feedback__slider-value
+												.row
+													.col-sm-6
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 3
+															p.feedback__slider-value-text Двери
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 50см
+															p.feedback__slider-value-text Ширина
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 50см
+															p.feedback__slider-value-text Глубина
+														.feedback__slider-value-block.col-sm-6
+															p.feedback__slider-value-number 2500см
+															p.feedback__slider-value-text Высота
+													.col-sm-6
+														.feedback__slider-value-total
+															p.feedback__slider-value-total-text К оплате:
+															p.feedback__slider-value-total-price(replaced-number) 24000
+																span.rubl a
+											p.feedback__slider-description-text Давно искала возможность заказать для дома шкаф. Пришло время! Я бы сказала пришел Шкафовский - мой супергерой! :)
+											.col-sm-7
+												p.feedback__slider-description-author
+													img(src="img/social.png", alt="")
+													| Мария Кравченко
+											.col-sm-5
+												p.feedback__slider-description-date 22 Август, 2015
+							// конец одного слайда
+							li.feedback__slider-item
+
+							li.feedback__slider-item
+					// конец блока со слайдером
+			.row
 				.col-sm-12.col-xs-12.text-center
 					a.btn.feedback__btn(href="#order" fancybox) Хочу точно такой же!
 	// конец отзывы
@@ -163,19 +214,22 @@ block content
 			.fact__block
 				.row
 					.col-md-7.col-sm-8
+						// текст факта слева
 						p.fact__text Шкаф появился в средние века в феодальной Европе. Долгое время он носил четкий след своего прародителя - сундука и имел ручки на боковых стенках. Одежда в нем хранилась только на полках.
+						// конец текст факта слева
 						p.fact__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quisquam ex officiis officia ab ipsam! Nam fuga commodi ea consequatur.
 						p.fact__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nisi veniam ipsam iure ad doloribus doloremque minima maiores laboriosam pariatur at, labore eum molestiae modi omnis maxime ea officia eos?
 					.col-md-2.hidden-xs.hidden-sm.position-static
 						img.fact__img(src="img/fact_shkafinator.png", alt="fact_shkafinator")
 					.col-md-3.col-sm-4
+						// текст справа
 						p.fact__extra-text А наша компания появилась совсем недавно, что в общем-то, очень хорошо. Ведь кому нужен шкаф в виде чемодана?
+						// конец текста страва
 						p.fact__extra-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sed assumenda quo accusamus, labore molestiae dolor possimus qui voluptates quidem aliquam libero asperiores reprehenderit odit aperiam iure tempora neque deserunt.
 						p.fact__extra-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eaque error, tempora itaque cumque nulla eveniet totam, consectetur quis provident.
 			.row
 				.col-sm-12.text-right
 					a.fact__changer(href="#!") Еще интересный факт
-
 	// конец факты
 	// дополнительные приемущества
 	.extra-advantages
@@ -185,13 +239,15 @@ block content
 					p.title.extra-advantages__title Так почему же наши шкафы так популярны?
 			.row
 				.col-sm-6
+					// блок 1-го приемущества
 					.extra-advantages__block
 						.row
 							.col-sm-3.col-lg-2
 								img.extra-advantages__block-img(src="img/ext_advantages_1.png", alt="ext_advantages")
 							.col-sm-9.col-lg-10
 								p.extra-advantages__block-title Материалы высокого качества
-								p.extra-advantages__block-text Материалы, из которых изготавливается шкаф, проходят строгую проверку качества. 
+								p.extra-advantages__block-text Материалы, из которых изготавливается шкаф, проходят строгую проверку качества.
+					// конец блока 1 приемущества 
 				.col-sm-6
 					.extra-advantages__block
 						.row
