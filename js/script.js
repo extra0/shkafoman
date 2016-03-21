@@ -226,19 +226,49 @@ $(function() {
 	});
 
 	// скролл к якорю
-	$("[anchor-trigger]").on("click", function (event) {
+	$("[anchor-trigger]").on("click", function(event) {
 
 		//отменяем стандартную обработку нажатия по ссылке
 		event.preventDefault();
 
 		//забираем идентификатор бока с атрибута href
-		var id  = $(this).attr('href'),
+		var id = $(this).attr('href'),
 
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
-		top = $(id).offset().top;
-		
+			//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+
 		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1500);
+		$('body,html').animate({
+			scrollTop: top
+		}, 1500);
+	});
+
+	// смена фактов
+	var i = 1,
+		text = $('.fact__text'),
+		extraText = $('.fact__extra-text'),
+		numText = text.length,
+		numExtraText = extraText.length;
+
+	$('.fact__changer').click(function(event) {
+		if (i < numText && i < numExtraText) {
+			text.eq(i - 1).fadeOut(400);
+			extraText.eq(i - 1).fadeOut(400);
+			setTimeout(function(){
+				text.eq(i - 1).fadeIn(400);
+				extraText.eq(i - 1).fadeIn(400);
+			}, 500);
+			i++;
+		} else {
+			i = 1;
+			text.eq(-1).fadeOut(400);
+			extraText.eq(-1).fadeOut(400);
+			setTimeout(function(){
+				text.eq(0).fadeIn(400);
+				extraText.eq(0).fadeIn(400);
+			}, 500);
+		}
+		return false;
 	});
 
 });
