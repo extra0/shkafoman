@@ -166,8 +166,11 @@ $(function() {
 
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 
-			stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
-			stepSection.eq(1).removeClass('hidden');
+			setTimeout(function(){
+				stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
+				stepSection.eq(1).removeClass('hidden');
+			}, 1200);
+			
 
 
 			stepOne.prop('disabled', true);
@@ -212,8 +215,12 @@ $(function() {
 
 		} else if ($('[step-btn].active').attr('step-btn') == 2) {
 
-			stepSection.eq(2).removeClass('hidden');
+			setTimeout(function(){
 
+				stepSection.eq(2).removeClass('hidden');
+			}, 1000);
+
+			
 			// убираем блоки 2-го шага
 			var i = 1,
 				timerwe = setInterval(function() {
@@ -256,18 +263,25 @@ $(function() {
 
 		var stepNumber = $(this).attr('step-btn');
 
+		setTimeout(function(){
+			stepSection.eq(1).addClass('hidden');
+			stepSection.eq(2).addClass('hidden');
+		},1000);
+
 		// если кликаем на 1-й шаг калькулятора
 		if (stepNumber == 1) {
 			$('[step-btn]').removeClass('active done');
 			stepTwo.prop('disabled', true);
 			stepThree.prop('disabled', true);
 			stepBtn.prev().find('img').removeClass('done');
+			
 
 			// убираем картинки материалов
 			materialImg.addClass('fadeOut');
 			setTimeout(function() {
 				materialImg.attr('src', '');
 				materialImg.removeClass('fadeOut');
+				stepSection.eq(0).removeClass('hidden');
 			}, 600);
 			//ставим на селекты дефолтные значения
 			materialSelect.find('option:nth-child(1)').prop('selected', true); // устанавливаем дефолтное значение на селект
@@ -282,6 +296,7 @@ $(function() {
 			stepOne.prop('disabled', true);
 			setTimeout(function(){
 				stepOne.prop('disabled', false);
+				stepSection.eq(1).removeClass('hidden');
 			}, 1000);
 		}
 
