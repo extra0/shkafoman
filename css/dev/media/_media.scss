@@ -1,4 +1,11 @@
 @media (max-width: 767px) {
+	.btn {
+		&:hover,
+		&:active {
+			border-bottom: 7px solid #7a0728;
+			top: 0;
+		}
+	}
 	.header {
 		&__section {
 			padding-bottom: 70px;
