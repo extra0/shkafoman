@@ -17,6 +17,8 @@ $(function() {
 	$('.feedback__slider').bxSlider({
 		pager: false,
 		mode: 'horizontal',
+		infiniteLoop: false,
+		hideControlOnEnd: true,
 		speed: 1500
 		// onSlideBefore() {
 		// 	$('.feedback__slider-description-bg').addClass('active');
