@@ -168,13 +168,16 @@ $(function() {
 		var actualStep = parseInt($('[step-btn].active').attr('step-btn'));
 
 		// замена картинки мастера
-		master.fadeOut(400);
-		setTimeout(function(){
-			master.removeClass('step-'+ actualStep);
-			master.addClass('step-'+ (actualStep + 1));
-			master.attr('src', 'img/sh-st-'+ (actualStep + 1)+'.png');
-			master.fadeIn(400);
-		}, 1000);
+		if ($('[step-btn].active').attr('step-btn') != 3) {
+			master.fadeOut(400);
+			setTimeout(function(){
+				master.removeClass('step-'+ actualStep);
+				master.addClass('step-'+ (actualStep + 1));
+				master.attr('src', 'img/sh-st-'+ (actualStep + 1)+'.png');
+				master.fadeIn(400);
+			}, 1000);
+		}
+		
 
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 

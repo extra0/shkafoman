@@ -385,7 +385,7 @@
 			@include position(absolute, null null -21px -210px);
 		}
 		&.step-3 {
-			@include position(absolute, null null -21px 150px);
+			@include position(absolute, null null -21px 70px);
 		}
 		
 	}
@@ -394,6 +394,9 @@
 .feedback {
 	background: #fff;
 	padding: 69px 0 0px 0;
+	& * {
+		@include transition(all 0.4s ease-in-out);
+	}
 	&__btn {
 		font-size: 20px;
 		padding: 19px 42px;
@@ -459,7 +462,12 @@
 				font-family: 'Flow';
 			}
 			&-bg {
-
+				@include transition(all 0.4s ease-in-out);
+				position: relative;
+				top: 0;
+				&.active {
+					top: 100px;
+				}
 			}
 		}
 		&-value {
@@ -536,6 +544,10 @@
 	&__gallery {
 		position: relative;
 		left: 61px;
+		&-img {
+			height: 85%;
+			background-size: cover!important;
+		}
 		&-block {
 			width: 400px;
 			height: 440px;
@@ -678,13 +690,13 @@
 		&-title {
 			font-size: 24px;
 			color: #000;
-			margin: 0 0 4px -27px;
+			margin: 0 0 4px -10px;
 			font-weight: 400;
 		}
 		&-text {
 			color: #555;
 			font-size: 16px;
-			margin: 0 27px 0 -27px;
+			margin: 0 27px 0 -10px;
 		}
 	}
 	&__btn {

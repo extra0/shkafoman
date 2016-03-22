@@ -26,7 +26,7 @@ block content
 					.advantages__block
 						.advantages__img-wrapper
 							img.advantages__img(src="img/advantages_4.png", alt="advantages")
-						p.advantages__title Железные гарантии
+						p.advantages__title Железные<br>гарантии
 						p.advantages__text Мы гарантируем, что наши шкафы действительно долговеченые. Вы получите гарантийный талон на 5 лет!
 	// конец Приемущества
 	// блок калькулятора
@@ -161,11 +161,15 @@ block content
 								.col-sm-4
 									// блок с картинками работы
 									.feedback__gallery
-										- for (i=1; i<=3; ++i) {
-											.feedback__gallery-block
-												a(href="img/content/g#{i}.jpg" fancybox rel="gallery_1")
-													img.feedback__gallery-img(src="img/content/g#{i}.jpg", alt="")
-										- }
+										.feedback__gallery-block
+											a(href="img/content/g1.jpg" fancybox rel="gallery")
+												.feedback__gallery-img(style="background: url(../img/content/g1.jpg) center no-repeat")
+										.feedback__gallery-block
+											a(href="img/content/g2.jpg" fancybox rel="gallery")
+												.feedback__gallery-img(style="background: url(../img/content/g2.jpg) center no-repeat")
+										.feedback__gallery-block
+											a(href="img/content/g3.jpg" fancybox rel="gallery")
+												.feedback__gallery-img(style="background: url(../img/content/g3.jpg) center no-repeat")
 									// конец блока с картинкам работы
 								.col-sm-8
 									.feedback__slider-description
@@ -205,11 +209,9 @@ block content
 								.col-sm-4
 									// блок с картинками работы
 									.feedback__gallery
-										- for (i=1; i<=3; ++i) {
-											.feedback__gallery-block
-												a(href="img/content/g#{i}.jpg" fancybox rel="gallery_1")
-													img.feedback__gallery-img(src="img/content/g#{i}.jpg", alt="")
-										- }
+										.feedback__gallery-block
+											a(href="img/content/g2.jpg" fancybox)
+												.feedback__gallery-img(style="background: url(../img/content/g2.jpg) center no-repeat")
 									// конец блока с картинкам работы
 								.col-sm-8
 									.feedback__slider-description
@@ -317,6 +319,23 @@ block content
 							.col-sm-9.col-lg-10
 								p.extra-advantages__block-title Большой выбор вариантов оформления
 								p.extra-advantages__block-text Подберите себе такой шкаф, который отлично впишется в интерьер вашего дома. Мы вам в это поможем.
+			.row
+				.col-sm-6
+					.extra-advantages__block
+						.row
+							.col-sm-3.col-lg-2
+								img.extra-advantages__block-img(src="img/ext_advantages_5.png", alt="ext_advantages")
+							.col-sm-9.col-lg-10
+								p.extra-advantages__block-title Lorem ipsum dolor.
+								p.extra-advantages__block-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, illum!
+				.col-sm-6
+					.extra-advantages__block
+						.row
+							.col-sm-3.col-lg-2
+								img.extra-advantages__block-img(src="img/ext_advantages_6.png", alt="ext_advantages")
+							.col-sm-9.col-lg-10
+								p.extra-advantages__block-title Lorem ipsum dolor sit.
+								p.extra-advantages__block-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, magnam?
 			.row
 				.col-sm-12.text-center
 					a.btn.extra-advantages__btn(href="#order" fancybox) Заказать шкаф-купе

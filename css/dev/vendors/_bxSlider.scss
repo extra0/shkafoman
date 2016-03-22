@@ -126,7 +126,7 @@
   width: 27px;
   height: 50px;
   text-indent: -9999px;
-  z-index: 9999;
+  z-index: 2000;
   opacity: 0.8;
   @include transition(all 0.4s ease-in-out);
 }
