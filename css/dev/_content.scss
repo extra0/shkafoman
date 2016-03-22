@@ -400,6 +400,7 @@
 	&__btn {
 		font-size: 20px;
 		padding: 19px 42px;
+		display: inline-block;
 	}
 	&__slider {
 		&-block {
@@ -416,7 +417,7 @@
 		}
 		&-description {
 			position: relative;
-			left: -45px;
+			left: -10px;
 			&-block {
 				@include position(absolute, 0 null null 0);
 				padding: 32px 74px 30px 74px;
@@ -543,7 +544,7 @@
 	}
 	&__gallery {
 		position: relative;
-		left: 61px;
+		left: 95px;
 		&-img {
 			height: 85%;
 			background-size: cover!important;

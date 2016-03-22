@@ -113,11 +113,11 @@ block content
 							.calculation__filter-step.hidden
 								.calculation__filter-block.slideOut
 									p.calculation__filter-text Принято! Ваш шкаф будет стоить:
-									p.calculation__filter-old-price(replaced-number) 24400
+									p.calculation__filter-old-price(replaced-number price) 24400
 									span.rubl a
 								.calculation__filter-block.slideOut
 									p.calculation__filter-text Оформляйте прямо сейчас и мы скинем 5% от цены! Стоимость будет:
-									p.calculation__filter-price(replaced-number) 21960
+									p.calculation__filter-price(replaced-number total-price) 21960
 									span.rubl a
 								.calculation__filter-block.slideOut
 									input.calculation__filter-input(type="text" required placeholder="Ваше имя")
@@ -147,7 +147,7 @@ block content
 	// конец блока калькулятора
 	// отзывы
 	.feedback.hidden-xs
-		.container
+		.container(style="overflow:hidden;")
 			.row
 				.col-sm-12.col-xs-12
 					p.title Подвиги и благодарности

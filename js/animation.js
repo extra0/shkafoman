@@ -14,7 +14,10 @@ $(function() {
 		stepOne = $('[step-btn="1"]'), // шаги переходов 
 		stepTwo = $('[step-btn="2"]'),
 		stepThree = $('[step-btn="3"]'),
-		master = $('.calculation__master'); // картинка мастера на калькуляторе
+		master = $('.calculation__master'), // картинка мастера на калькуляторе
+		price = $('[price]'), // цена общая без скидки
+		totalPrice = $('[total-price]'),// цена со скидкой
+		sum = 0; // сумма калькулятора
 
 	imgChanger(); // вызов функции замены при загрузке
 
@@ -24,6 +27,7 @@ $(function() {
 		$('.ui-selectmenu-button').removeClass('show'); // снимаем класс отображения selectov
 		selectShow(); // функция показа selectov
 		imgChanger(); // функция смены изображения шкафа
+		calculation(); // функция просчета
 
 	});
 
@@ -37,6 +41,7 @@ $(function() {
 		slide: function(event, ui) {
 			depthVal = ui.value;
 			imgChanger();
+			calculation(); // функция просчета
 		}
 	}).slider("pips", {
 		rest: "label",
@@ -53,6 +58,7 @@ $(function() {
 		slide: function(event, ui) {
 			widthVal = ui.value;
 			imgChanger();
+			calculation(); // функция просчета
 		}
 	}).slider("pips", {
 		rest: "label",
@@ -69,6 +75,7 @@ $(function() {
 		slide: function(event, ui) {
 			heightVal = ui.value;
 			imgChanger();
+			calculation(); // функция просчета
 		}
 	}).slider("pips", {
 		rest: "label",
@@ -95,6 +102,9 @@ $(function() {
 			return li.appendTo(ul);
 		}
 	});
+
+
+	// ================  АНИМАЦИЯ КАЛЬКУЛЯТОРА
 
 	// вызов кастомного селекта и его постобработка
 	$("select")
@@ -349,5 +359,30 @@ $(function() {
 
 		$(this).addClass('active');
 	});
+
+	// ================  Конец АНИМАЦИЯ КАЛЬКУЛЯТОРА
+
+
+	// ================ Расчеты калькулятора
+	function calculation() {
+		switch(doorsVal) {
+			case 2:
+				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 1) + ((widthVal / 100) / 2 * 4) * (depthVal / 100 - 0.1) * 1650;
+				break;
+			case 3:
+				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 2) + ((widthVal / 100) / 3 * 4) * (depthVal / 100 - 0.1) * 1650;
+				break;
+			case 4:
+				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 3) + ((widthVal / 100) / 4 * 8) * (depthVal / 100 - 0.1) * 1650;
+				break;
+		}
+
+		price.html((sum).toFixed(0));
+		totalPrice.html((sum - (sum * 0.05)).toFixed(0));
+
+		// ф-я разбивки на разряды
+		function numberWithCommas(x) { return x.toString().replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1 ");}
+		$('[replaced-number]').each(function(){	$(this).html(numberWithCommas($(this).html()));	});
+	}
 
 });

@@ -16,7 +16,8 @@ $(function() {
 	// слайдер отзывов
 	$('.feedback__slider').bxSlider({
 		pager: false,
-		mode: 'horizontal'
+		mode: 'horizontal',
+		speed: 1500
 		// onSlideBefore() {
 		// 	$('.feedback__slider-description-bg').addClass('active');
 		// },
