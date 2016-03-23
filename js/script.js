@@ -133,10 +133,7 @@ $(function() {
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
 			}))
-
-
-
-		.add(new ymaps.Placemark([54.777697023347606, 37.70197299999995], {
+			.add(new ymaps.Placemark([54.777697023347606, 37.70197299999995], {
 			}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',

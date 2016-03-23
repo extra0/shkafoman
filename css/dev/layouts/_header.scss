@@ -1,16 +1,6 @@
 .header {
 	background: url(../img/header_bg.png) 0 0 no-repeat;
 	background-size: cover;
-	&__section {
-		position: relative;
-		&:before {
-			content: '';
-			background: url(../img/city.png) 0 0 no-repeat;
-			@include position(absolute, nll null 0 -160px);
-			width: 876px;
-			height: 482px;
-		}
-	}
 	&__phone {
 		display: inline-block;
 		text-decoration: none;
@@ -23,7 +13,7 @@
 		margin-bottom: 61px;
 		&:active,
 		&:focus,
-		&:hover {
+		&:hover { 
 			text-decoration: none;
 			color: #fff;
 		}
