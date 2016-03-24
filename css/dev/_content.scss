@@ -417,7 +417,15 @@
 		}
 		&-description {
 			position: relative;
-			left: -10px;
+			left: -50px;
+			@include transition(all 0.4s ease-in-out);
+			opacity: 1;
+			&.active {
+				opacity: 0;
+				left: 300px;
+				top: -200px;
+				@include transform(rotate(-100deg));
+			}
 			&-block {
 				@include position(absolute, 0 null null 0);
 				padding: 32px 74px 30px 74px;
@@ -474,12 +482,13 @@
 		&-value {
 			position: relative;
 			margin: 0 0 40px -18px;
-			opacity: 1;
 			top: 0;
 			right: 0;
 			@include transition(all 0.4s ease-in-out);
 			&.active {
-				opacity: 0;
+				right: 420px;
+				top: -320px;
+				@include transform(rotate(120deg));
 			}
 			&:before {
 				content: '';
@@ -551,7 +560,7 @@
 	}
 	&__gallery {
 		position: relative;
-		left: 95px;
+		left: 50px;
 		top: 0;
 		opacity: 1;
 		@include transition(all 0.4s ease-in-out);

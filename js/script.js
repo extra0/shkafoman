@@ -21,9 +21,9 @@ $(function() {
 		hideControlOnEnd: true,
 		speed: 500,
 		onSlideBefore() {
-			$('.feedback__gallery, .feedback__slider-value').addClass('active');
+			$('.feedback__gallery, .feedback__slider-value, .feedback__slider-description').addClass('active');
 			setTimeout(function(){
-				$('.feedback__gallery, .feedback__slider-value').removeClass('active');
+				$('.feedback__gallery, .feedback__slider-value, .feedback__slider-description').removeClass('active');
 			},500);
 		}
 	});
