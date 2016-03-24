@@ -18,7 +18,7 @@ $(function() {
 		price = $('[price]'), // цена общая без скидки
 		totalPrice = $('[total-price]'), // цена со скидкой
 		materialSum = 0; // сумма материалов дверей
-		sum = 0; // сумма калькулятора
+	sum = 0; // сумма калькулятора
 
 	// изменяем количество дверей радиокнопкой
 	radioBtn.on('change load', function() {
@@ -331,7 +331,23 @@ $(function() {
 			}, 600);
 			//ставим на селекты дефолтные значения
 			materialSelect.find('option:nth-child(1)').prop('selected', true); // устанавливаем дефолтное значение на селект
-			$('.ui-selectmenu-text').html('Выберите материал'); // в кастомных селектах ставим дефолтное значение
+			
+			$('.calculation__filter-select-block select + span').each(function(i){
+				switch (i+1) {
+					case 1:
+						$(this).find('.ui-selectmenu-text').html('Материал I двери');
+						break;
+					case 2:
+						$(this).find('.ui-selectmenu-text').html('Материал II двери');
+						break;
+					case 3:
+						$(this).find('.ui-selectmenu-text').html('Материал III двери');
+						break;
+					case 4:
+						$(this).find('.ui-selectmenu-text').html('Материал IV двери');
+						break;
+				}
+			});
 			$('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood');
 
 			// клик по 2-му шагу
