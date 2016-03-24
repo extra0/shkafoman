@@ -16,18 +16,16 @@ $(function() {
 	// слайдер отзывов
 	$('.feedback__slider').bxSlider({
 		pager: false,
-		mode: 'horizontal',
+		mode: 'fade',
 		infiniteLoop: false,
 		hideControlOnEnd: true,
-		speed: 1500
-		// onSlideBefore() {
-		// 	$('.feedback__slider-description-bg').addClass('active');
-		// },
-		// onSlideAfter() {
-		// 	setTimeout(function(){
-		// 		$('.feedback__slider-description-bg').removeClass('active');
-		// 	}, 2000);
-		// }
+		speed: 500,
+		onSlideBefore() {
+			$('.feedback__gallery, .feedback__slider-value').addClass('active');
+			setTimeout(function(){
+				$('.feedback__gallery, .feedback__slider-value').removeClass('active');
+			},500);
+		}
 	});
 
 	// яндекс карта 
