@@ -20,9 +20,6 @@ $(function() {
 		materialSum = 0; // сумма материалов дверей
 		sum = 0; // сумма калькулятора
 
-	imgChanger(); // вызов функции замены при загрузке
-	materialPrice(); // внесение цен на option select
-
 	// изменяем количество дверей радиокнопкой
 	radioBtn.on('change load', function() {
 		doorsVal = parseInt($(this).val());
@@ -158,6 +155,11 @@ $(function() {
 		})
 		.iconselectmenu("menuWidget")
 		.addClass("ui-menu-icons customicons");
+
+
+	imgChanger(); // вызов функции замены при загрузке
+	materialPrice(); // внесение цен на option select
+	calculation(); // расчитываем начальные значения
 
 
 	// функция показа selectov материала
