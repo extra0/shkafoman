@@ -16,10 +16,12 @@ $(function() {
 		stepThree = $('[step-btn="3"]'),
 		master = $('.calculation__master'), // картинка мастера на калькуляторе
 		price = $('[price]'), // цена общая без скидки
-		totalPrice = $('[total-price]'),// цена со скидкой
+		totalPrice = $('[total-price]'), // цена со скидкой
+		materialSum = 0; // сумма материалов дверей
 		sum = 0; // сумма калькулятора
 
 	imgChanger(); // вызов функции замены при загрузке
+	materialPrice(); // внесение цен на option select
 
 	// изменяем количество дверей радиокнопкой
 	radioBtn.on('change load', function() {
@@ -141,6 +143,13 @@ $(function() {
 				// меняем изображение материалов в селектах (выбранных пунктах)
 				$(this).next().find('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood');
 				$(this).next().find('.ui-selectmenu-text').addClass($(this).find('option:selected').attr('data-class'));
+
+				// просчет цены на двери
+				$('.calculation__filter-select').each(function() {
+					materialSum += parseInt($(this).find('option:selected').attr('data-price'));
+				});
+
+				calculation();
 			},
 			// функция показа selectov при загрузке
 			create: function(event, ui) {
@@ -180,29 +189,29 @@ $(function() {
 		// замена картинки мастера
 		if ($('[step-btn].active').attr('step-btn') != 3) {
 			master.fadeOut(400);
-			setTimeout(function(){
-				master.removeClass('step-'+ actualStep);
-				master.addClass('step-'+ (actualStep + 1));
-				master.attr('src', 'img/sh-st-'+ (actualStep + 1)+'.png');
+			setTimeout(function() {
+				master.removeClass('step-' + actualStep);
+				master.addClass('step-' + (actualStep + 1));
+				master.attr('src', 'img/sh-st-' + (actualStep + 1) + '.png');
 				master.fadeIn(400);
 			}, 1000);
 		}
-		
+
 
 		if ($('[step-btn].active').attr('step-btn') == 1) {
 
-			setTimeout(function(){
+			setTimeout(function() {
 				stepSection.eq(1).show(); // показываем блоки второго шага (фикс перехода по шагам 3-1-2)
 				stepSection.eq(1).removeClass('hidden');
 			}, 1200);
-			
+
 
 			stepOne.prop('disabled', true);
-			setTimeout(function(){
+			setTimeout(function() {
 				stepOne.prop('disabled', false);
 			}, 1000);
 
-			
+
 			// убираем блоки 1-го шага
 			var i = 1,
 				timer = setInterval(function() {
@@ -239,12 +248,12 @@ $(function() {
 
 		} else if ($('[step-btn].active').attr('step-btn') == 2) {
 
-			setTimeout(function(){
+			setTimeout(function() {
 
 				stepSection.eq(2).removeClass('hidden');
 			}, 1000);
 
-			
+
 			// убираем блоки 2-го шага
 			var i = 1,
 				timerwe = setInterval(function() {
@@ -289,17 +298,17 @@ $(function() {
 
 		// замена картинки мастера
 		master.fadeOut(400);
-		setTimeout(function(){
+		setTimeout(function() {
 			master.removeClass('step-2 step-1 step-3');
-			master.addClass('step-'+ (stepNumber));
-			master.attr('src', 'img/sh-st-'+ (stepNumber)+'.png');
+			master.addClass('step-' + (stepNumber));
+			master.attr('src', 'img/sh-st-' + (stepNumber) + '.png');
 			master.fadeIn(400);
 		}, 1000);
 
-		setTimeout(function(){
+		setTimeout(function() {
 			stepSection.eq(1).addClass('hidden');
 			stepSection.eq(2).addClass('hidden');
-		},1000);
+		}, 1000);
 
 		// если кликаем на 1-й шаг калькулятора
 		if (stepNumber == 1) {
@@ -307,7 +316,7 @@ $(function() {
 			stepTwo.prop('disabled', true);
 			stepThree.prop('disabled', true);
 			stepBtn.prev().find('img').removeClass('done');
-			
+
 
 			// убираем картинки материалов
 			materialImg.addClass('fadeOut');
@@ -327,7 +336,7 @@ $(function() {
 			stepTwo.removeClass('done');
 			stepTwo.prev().find('img').removeClass('done');
 			stepOne.prop('disabled', true);
-			setTimeout(function(){
+			setTimeout(function() {
 				stepOne.prop('disabled', false);
 				stepSection.eq(1).removeClass('hidden');
 			}, 1000);
@@ -368,7 +377,7 @@ $(function() {
 		var wVal = widthVal / 100,
 			hVal = heightVal / 100,
 			dVal = depthVal / 100;
-		switch(doorsVal) {
+		switch (doorsVal) {
 			case 2:
 				sum = (wVal * 2) + (hVal - 0.5 * 1) + (wVal / 2 * 4) * (dVal - 0.1) * 1650;
 				break;
@@ -380,62 +389,66 @@ $(function() {
 				break;
 		}
 
+		sum += materialSum;
+
 		price.html((sum).toFixed(0));
 		totalPrice.html((sum - (sum * 0.05)).toFixed(0));
 
 		// ф-я разбивки на разряды
-		function numberWithCommas(x) { return x.toString().replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1 ");}
-		$('[replaced-number]').each(function(){	$(this).html(numberWithCommas($(this).html()));	});
+		function numberWithCommas(x) {
+			return x.toString().replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1 ");
+		}
+		$('[replaced-number]').each(function() {
+			$(this).html(numberWithCommas($(this).html()));
+		});
 	}
 
 	function materialPrice() {
-		// порядок цен - без материала/Бамбук/Зеркало с узором/Оракал/Фотопечать/Дсп/Зеркало
-		var fourTy = ['0','18700', '13500', '13860', '16000', '9300', '11500'],
-			fifTy = ['0','18700', '13500', '13860', '16000', '9300', '11500'],
-			sixTy = ['0','18700', '13500', '15100', '16000', '9760', '11500'],
-			sevenTy = ['0','18700', '13500', '16324', '16000', '10214', '11500'],
-			eightTy = ['0','18700', '13830', '17570', '16000', '10670', '11830'];
+		// порядок цен - без материала/Бамбук/Зеркало с узором/Оракал/Фотопечать/Дсп/Зеркало (как последовательность select в HTML)
+		var fourTy = ['0', '18700', '13500', '13860', '16000', '9300', '11500'],
+			fifTy = ['0', '18700', '13500', '13860', '16000', '9300', '11500'],
+			sixTy = ['0', '18700', '13500', '15100', '16000', '9760', '11500'],
+			sevenTy = ['0', '18700', '13500', '16324', '16000', '10214', '11500'],
+			eightTy = ['0', '18700', '13830', '17570', '16000', '10670', '11830'];
 
-		switch(widthVal) {
+		switch (widthVal) {
 			case 40:
 				console.log($('.calculation__filter-select').length);
-				$('.calculation__filter-select').each(function(){
-					$(this).children('option').each(function(i){
+				$('.calculation__filter-select').each(function() {
+					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', fourTy[i]);
 					});
 				});
 				break;
 			case 50:
-				$('.calculation__filter-select').each(function(){
-					$(this).children('option').each(function(i){
+				$('.calculation__filter-select').each(function() {
+					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', fifTy[i]);
 					});
 				});
 				break;
 			case 60:
-				$('.calculation__filter-select').each(function(){
-					$(this).children('option').each(function(i){
+				$('.calculation__filter-select').each(function() {
+					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', sixTy[i]);
 					});
 				});
 				break;
 			case 70:
-				$('.calculation__filter-select').each(function(){
-					$(this).children('option').each(function(i){
+				$('.calculation__filter-select').each(function() {
+					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', sevenTy[i]);
 					});
 				});
 				break;
 			case 80:
-				$('.calculation__filter-select').each(function(){
-					$(this).children('option').each(function(i){
+				$('.calculation__filter-select').each(function() {
+					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', eightTy[i]);
 					});
 				});
-				break;		
+				break;
 		}
 	}
-
-	materialPrice();
 
 });
