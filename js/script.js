@@ -284,8 +284,17 @@ $(function() {
 	 //        	e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
 	 
 	 //        if(w_top + ($(window).height() - 200) >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
-	 //            $(countbox).addClass('active');
-	 //            show = false;
+
+	 //            var i = 1,
+	 //            	timerwe = setInterval(function() {
+	 //            		if (i <= 7) {
+	 //            			$(countbox).each(function(){
+	 //            				$(this).addClass('active');
+	 //            			});
+	 //            		} else {
+	 //            			clearInterval(timerwe); // убираем зацикливание
+	 //            		}
+	 //            	}, 250);
 	 //        }
 	 //    });
 
