@@ -28,7 +28,6 @@ $(function() {
 		selectShow(); // функция показа selectov
 		imgChanger(); // функция смены изображения шкафа
 		calculation(); // функция просчета
-
 	});
 
 	// слайдер глубины
@@ -59,6 +58,7 @@ $(function() {
 			widthVal = ui.value;
 			imgChanger();
 			calculation(); // функция просчета
+			materialPrice(); // устанавливаем цены на материалы
 		}
 	}).slider("pips", {
 		rest: "label",
@@ -365,15 +365,18 @@ $(function() {
 
 	// ================ Расчеты калькулятора
 	function calculation() {
+		var wVal = widthVal / 100,
+			hVal = heightVal / 100,
+			dVal = depthVal / 100;
 		switch(doorsVal) {
 			case 2:
-				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 1) + ((widthVal / 100) / 2 * 4) * (depthVal / 100 - 0.1) * 1650;
+				sum = (wVal * 2) + (hVal - 0.5 * 1) + (wVal / 2 * 4) * (dVal - 0.1) * 1650;
 				break;
 			case 3:
-				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 2) + ((widthVal / 100) / 3 * 4) * (depthVal / 100 - 0.1) * 1650;
+				sum = (wVal * 2) + (hVal - 0.5 * 2) + (wVal / 3 * 4) * (dVal - 0.1) * 1650;
 				break;
 			case 4:
-				sum = ((widthVal / 100) * 2) + ((heightVal / 100) - 0.5 * 3) + ((widthVal / 100) / 4 * 8) * (depthVal / 100 - 0.1) * 1650;
+				sum = (wVal * 2) + (hVal - 0.5 * 3) + (wVal / 4 * 8) * (dVal - 0.1) * 1650;
 				break;
 		}
 
@@ -384,5 +387,55 @@ $(function() {
 		function numberWithCommas(x) { return x.toString().replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1 ");}
 		$('[replaced-number]').each(function(){	$(this).html(numberWithCommas($(this).html()));	});
 	}
+
+	function materialPrice() {
+		// порядок цен - без материала/Бамбук/Зеркало с узором/Оракал/Фотопечать/Дсп/Зеркало
+		var fourTy = ['0','18700', '13500', '13860', '16000', '9300', '11500'],
+			fifTy = ['0','18700', '13500', '13860', '16000', '9300', '11500'],
+			sixTy = ['0','18700', '13500', '15100', '16000', '9760', '11500'],
+			sevenTy = ['0','18700', '13500', '16324', '16000', '10214', '11500'],
+			eightTy = ['0','18700', '13830', '17570', '16000', '10670', '11830'];
+
+		switch(widthVal) {
+			case 40:
+				console.log($('.calculation__filter-select').length);
+				$('.calculation__filter-select').each(function(){
+					$(this).children('option').each(function(i){
+						$(this).attr('data-price', fourTy[i]);
+					});
+				});
+				break;
+			case 50:
+				$('.calculation__filter-select').each(function(){
+					$(this).children('option').each(function(i){
+						$(this).attr('data-price', fifTy[i]);
+					});
+				});
+				break;
+			case 60:
+				$('.calculation__filter-select').each(function(){
+					$(this).children('option').each(function(i){
+						$(this).attr('data-price', sixTy[i]);
+					});
+				});
+				break;
+			case 70:
+				$('.calculation__filter-select').each(function(){
+					$(this).children('option').each(function(i){
+						$(this).attr('data-price', sevenTy[i]);
+					});
+				});
+				break;
+			case 80:
+				$('.calculation__filter-select').each(function(){
+					$(this).children('option').each(function(i){
+						$(this).attr('data-price', eightTy[i]);
+					});
+				});
+				break;		
+		}
+	}
+
+	materialPrice();
 
 });
