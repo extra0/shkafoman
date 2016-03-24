@@ -394,9 +394,6 @@
 .feedback {
 	background: #fff;
 	padding: 69px 0 0px 0;
-	& * {
-		@include transition(all 0.4s ease-in-out);
-	}
 	&__btn {
 		font-size: 20px;
 		padding: 19px 42px;
@@ -487,8 +484,8 @@
 			right: 0;
 			@include transition(all 0.4s ease-in-out);
 			&.active {
-				right: 420px;
-				top: -320px;
+				right: 600px;
+				top: -600px;
 				@include transform(rotate(120deg));
 			}
 			&:before {

@@ -75,12 +75,12 @@
 .ui-icon.wood {background-position: 0px -204px!important;}
 .ui-icon.mirror-flat {background-position: 0px -254px!important;}
 
-.ui-selectmenu-text.bamboo {background-position: 12px 8px!important;}
-.ui-selectmenu-text.mirror {background-position: 12px -41px!important;}
-.ui-selectmenu-text.oracal {background-position: 12px -92px!important;}
-.ui-selectmenu-text.picture {background-position: 12px -143px!important;}
-.ui-selectmenu-text.wood {background-position: 12px -194px!important;}
-.ui-selectmenu-text.mirror-flat {background-position: 12px -246px!important;}
+.ui-selectmenu-text.bamboo {background-position: 12px 4px!important;}
+.ui-selectmenu-text.mirror {background-position: 12px -45px!important;}
+.ui-selectmenu-text.oracal {background-position: 12px -96px!important;}
+.ui-selectmenu-text.picture {background-position: 12px -147px!important;}
+.ui-selectmenu-text.wood {background-position: 12px -198px!important;}
+.ui-selectmenu-text.mirror-flat {background-position: 12px -250px!important;}
 
 
 .ui-selectmenu-text.bamboo,
@@ -91,7 +91,7 @@
 .ui-selectmenu-text.wood {
 	background: url(../img/materials-select.png);
 	background-repeat: no-repeat;
-	padding: 14px 10px 14px 70px!important;
+	padding: 14px 40px 14px 70px!important;
 }
 
 /* Misc visuals
@@ -485,7 +485,7 @@ button.ui-button::-moz-focus-inner {
 	margin: 0;
 	padding: 14px 10px 14px 18px;
 	cursor: pointer;
-	font-size: 22px;
+	font-size: 18px;
 	min-height: 0; /* support: IE7 */
 	font-weight: bold;
 	font-family: 'Flow';
@@ -677,7 +677,7 @@ button.ui-button::-moz-focus-inner {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	font-size: 22px;
+	font-size: 18px;
 	font-family: 'Flow';
 	font-weight: bold;
 }

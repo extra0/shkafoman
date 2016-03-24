@@ -319,6 +319,8 @@ $(function() {
 			stepThree.prop('disabled', true);
 			stepBtn.prev().find('img').removeClass('done');
 
+			materialSum = 0;
+			calculation();
 
 			// убираем картинки материалов
 			materialImg.addClass('fadeOut');
@@ -376,7 +378,7 @@ $(function() {
 
 	// ================ Расчеты калькулятора
 	function calculation() {
-		var wVal = widthVal / 100,
+		var wVal = widthVal / 100 * doorsVal,
 			hVal = heightVal / 100,
 			dVal = depthVal / 100;
 		switch (doorsVal) {

@@ -99,7 +99,7 @@ block content
 										- for (i = 1; i <= 4; ++i) {
 											select.calculation__filter-select(item-door-number="#{i}")
 												option(data-class="none" item-door-material="none") Выберите материал
-												option(data-class="bamboo" item-door-material="Door_bamboo") Бамбук
+												option(data-class="bamboo" item-door-material="Door_bamboo") Бамбук, Ротанг, Эко-кожа 
 												option(data-class="mirror" item-door-material="Door_mirror") Зеркало с узором
 												option(data-class="oracal" item-door-material="Door_oracal") Оракал
 												option(data-class="picture" item-door-material="Door_picture") Фотопечать
@@ -146,7 +146,7 @@ block content
 				// конец блока с изображением 
 	// конец блока калькулятора
 	// отзывы
-	.feedback.hidden-xs
+	.feedback.hidden-xs.hidden-sm
 		.container(style="overflow:hidden;")
 			.row
 				.col-sm-12.col-xs-12
@@ -158,7 +158,7 @@ block content
 						ul.feedback__slider
 							// 1 слайд
 							li.feedback__slider-item
-								.col-sm-4
+								.col-md-4
 									// блок с картинками работы
 									.feedback__gallery
 										.feedback__gallery-block
@@ -171,7 +171,7 @@ block content
 											a(href="img/content/g3.jpg" fancybox rel="gallery")
 												.feedback__gallery-img(style="background: url(img/content/g3.jpg) center no-repeat")
 									// конец блока с картинкам работы
-								.col-sm-8
+								.col-lg-8.col-md-12
 									.feedback__slider-description
 										img.feedback__slider-description-bg(src="img/slide-bg.png", alt="")
 										.feedback__slider-description-block
@@ -206,14 +206,14 @@ block content
 												p.feedback__slider-description-date 22 Август, 2015
 							// конец одного слайда
 							li.feedback__slider-item
-								.col-sm-4
+								.col-md-4
 									// блок с картинками работы
 									.feedback__gallery
 										.feedback__gallery-block
 											a(href="img/content/g2.jpg" fancybox)
 												.feedback__gallery-img(style="background: url(img/content/g2.jpg) center no-repeat")
 									// конец блока с картинкам работы
-								.col-sm-8
+								.col-lg-8.col-md-12
 									.feedback__slider-description
 										img.feedback__slider-description-bg(src="img/slide-bg.png", alt="")
 										.feedback__slider-description-block

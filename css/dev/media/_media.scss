@@ -209,4 +209,38 @@
 			font-size: 18px;
 		}
 	}
+	.feedback {
+		&__gallery {
+			left: 10px;
+			&-block {
+				width: 280px;
+				height: 300px;
+			}
+		}
+		&__slider-value {
+			margin: 0 0 40px 0px;
+		}
+		&__slider-description {
+			left: 0;
+			&-bg {
+				left: 140px;
+			}
+			&-block {
+				margin-left: 250px;
+			}
+			&-text {
+				margin: 0 10px 23px -60px;
+			}
+			&-author {
+				margin: 0 0 0 -90px;
+			}
+			&-date {
+				margin-right: 10px;
+			}
+			&-title {
+				margin: 0 10px 55px -33px;
+			}
+		}
+	}
+
 }
