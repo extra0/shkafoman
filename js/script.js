@@ -233,8 +233,8 @@ $(function() {
 
 		//анимируем переход на расстояние - top за 1500 мс
 		$('body,html').animate({
-			scrollTop: top
-		}, 1500);
+			scrollTop: top + 100
+		}, 750);
 	});
 
 	// смена фактов
@@ -270,5 +270,23 @@ $(function() {
 	$('[replaced-number]').each(function(){	$(this).html(numberWithCommas($(this).html()));	});
 
 
+
+		// var show = true,
+	 //    	countbox = ".extra-advantages > div > div > div";
+	 //    $(window).on("scroll load resize", function(){
+	 
+	 //        if(!show) return false;                   // Отменяем показ анимации, если она уже была выполнена
+	 
+	 //        var w_top = $(window).scrollTop(),       // Количество пикселей на которое была прокручена страница
+	 //        	e_top = $(countbox).offset().top,     // Расстояние от блока со счетчиками до верха всего документа
+	 //        	w_height = $(window).height(),        // Высота окна браузера
+	 //        	d_height = $(document).height(),      // Высота всего документа
+	 //        	e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+	 
+	 //        if(w_top + ($(window).height() - 200) >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
+	 //            $(countbox).addClass('active');
+	 //            show = false;
+	 //        }
+	 //    });
 
 });

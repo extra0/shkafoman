@@ -383,13 +383,13 @@ $(function() {
 			dVal = depthVal / 100;
 		switch (doorsVal) {
 			case 2:
-				sum = (wVal * 2) + (hVal - 0.5 * 1) + (wVal / 2 * 4) * (dVal - 0.1) * 1650;
+				sum = (((wVal * 2) + (hVal - 0.5 * 1) + (wVal / 2 * 4)) * (dVal - 0.1)) * 1650;
 				break;
 			case 3:
-				sum = (wVal * 2) + (hVal - 0.5 * 2) + (wVal / 3 * 4) * (dVal - 0.1) * 1650;
+				sum = (((wVal * 2) + (hVal - 0.5 * 2) + (wVal / 3 * 4)) * (dVal - 0.1)) * 1650;
 				break;
 			case 4:
-				sum = (wVal * 2) + (hVal - 0.5 * 3) + (wVal / 4 * 8) * (dVal - 0.1) * 1650;
+				sum = (((wVal * 2) + (hVal - 0.5 * 3) + (wVal / 4 * 8)) * (dVal - 0.1)) * 1650;
 				break;
 		}
 

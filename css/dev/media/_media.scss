@@ -190,8 +190,23 @@
 		}
 	}
 	.calculation {
+		padding: 51px 0;
 		&__filter-btn {
 			font-size: 18px;
+		}
+		&__master {
+			&.step-1 {
+				right: 120px;
+				bottom: -194px;
+			}
+			&.step-2 {
+				bottom: -75px;
+			    left: -150px;
+			}
+			&.step-3 {
+				left: 30px;
+				bottom: -74px;
+			}
 		}
 	}
 	.modal {
