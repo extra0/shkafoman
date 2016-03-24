@@ -701,28 +701,28 @@
 	padding: 29px 0 63px 0;
 	position: relative;
 	z-index: 2;
-	& > div > div > div {
-		@include transition(all 0.4s ease-in-out);
-		position: relative;
-		&:nth-child(odd) {
-			left: -200px;
-			opacity: 0;
-		}
-		&:nth-child(even) {
-			right: -200px;
-			opacity: 0;
-		}
-		&.active {
-			&:nth-child(odd) {
-				left: 0;
-				opacity:10;
-			}
-			&:nth-child(even) {
-				right: 0;
-				opacity: 1;
-			}
-		}
-	}
+	// & > div > div > div {
+	// 	@include transition(all 0.4s ease-in-out);
+	// 	position: relative;
+	// 	&:nth-child(odd) {
+	// 		left: -200px;
+	// 		opacity: 0;
+	// 	}
+	// 	&:nth-child(even) {
+	// 		right: -200px;
+	// 		opacity: 0;
+	// 	}
+	// 	&.active {
+	// 		&:nth-child(odd) {
+	// 			left: 0;
+	// 			opacity:10;
+	// 		}
+	// 		&:nth-child(even) {
+	// 			right: 0;
+	// 			opacity: 1;
+	// 		}
+	// 	}
+	// }
 	&__title {
 		margin: 0 0 44px 0;
 	}

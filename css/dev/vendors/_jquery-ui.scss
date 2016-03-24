@@ -497,6 +497,9 @@ button.ui-button::-moz-focus-inner {
 	&:not(:first-child) {
 		border-top: 2px solid #faf7f5;
 	}
+	&:first-child {
+		display: none;
+	}
 }
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
