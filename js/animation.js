@@ -319,15 +319,15 @@ $(function() {
 			stepThree.prop('disabled', true);
 			stepBtn.prev().find('img').removeClass('done');
 
-			materialSum = 0;
-			calculation();
-
 			// убираем картинки материалов
 			materialImg.addClass('fadeOut');
 			setTimeout(function() {
 				materialImg.attr('src', '');
 				materialImg.removeClass('fadeOut');
 				stepSection.eq(0).removeClass('hidden');
+
+				materialSum = 0;
+				calculation();
 			}, 600);
 			//ставим на селекты дефолтные значения
 			materialSelect.find('option:nth-child(1)').prop('selected', true); // устанавливаем дефолтное значение на селект
