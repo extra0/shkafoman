@@ -10,7 +10,7 @@
 		font-weight: 500;
 		background: url(../img/phone.png) 0 0 no-repeat;
 		padding: 19px 0 0 76px;
-		margin-bottom: 61px;
+		// margin-bottom: 61px;
 		&:active,
 		&:focus,
 		&:hover { 
@@ -25,6 +25,13 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+	}
+	&__time {
+		color: #fff;
+		font-size: 16px;
+		font-family: 'Etelka';
+		font-style: italic;
+		margin: -5px 0 73px 110px;
 	}
 	&__description {
 		&-title {
