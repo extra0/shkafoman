@@ -94,6 +94,11 @@
 		}
 		&__filter {
 			margin: 41px 0 0 0;
+			&-description {
+				&:before {
+					background-size: 100% 100%;
+				}
+			}
 		}
 		&__material-holder-img,
 		&__img {
@@ -197,7 +202,7 @@
 		&__master {
 			&.step-1 {
 				right: 120px;
-				bottom: -194px;
+				bottom: -340px;
 			}
 			&.step-2 {
 				bottom: -75px;
@@ -227,6 +232,12 @@
 	.calculation {
 		&__filter-btn {
 			font-size: 18px;
+		}
+		&__master {
+			&.step-1 {
+				right: 120px;
+				bottom: -132px;
+			}
 		}
 	}
 	.feedback {
