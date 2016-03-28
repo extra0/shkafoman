@@ -214,6 +214,11 @@
 	}
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+	.header {
+		&__img-text {
+			right: -105px;
+		}
+	}
 	.fact {
 		&__img {
 			margin: -75px 0 -1px -18px;
