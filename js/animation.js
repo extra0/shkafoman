@@ -147,7 +147,6 @@ $(function() {
 					materialSum = 0;
 					k += parseInt($(this).find('option:selected').attr('data-price'));
 					materialSum += k;
-					console.log(materialSum);
 				});
 
 				calculation();
