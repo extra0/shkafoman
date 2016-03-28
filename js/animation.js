@@ -138,12 +138,16 @@ $(function() {
 				}
 
 				// меняем изображение материалов в селектах (выбранных пунктах)
-				$(this).next().find('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood');
+				$(this).next().find('.ui-selectmenu-text').removeClass('none bamboo mirror oracal picture wood mirror-flat');
 				$(this).next().find('.ui-selectmenu-text').addClass($(this).find('option:selected').attr('data-class'));
 
 				// просчет цены на двери
+				var k = 0;
 				$('.calculation__filter-select').each(function() {
-					materialSum += parseInt($(this).find('option:selected').attr('data-price'));
+					materialSum = 0;
+					k += parseInt($(this).find('option:selected').attr('data-price'));
+					materialSum += k;
+					console.log(materialSum);
 				});
 
 				calculation();
@@ -411,6 +415,8 @@ $(function() {
 
 		sum += materialSum;
 
+		console.log('Общая сумма = ' + sum);
+
 		price.html((sum).toFixed(0));
 		totalPrice.html((sum - (sum * 0.05)).toFixed(0));
 
@@ -433,7 +439,6 @@ $(function() {
 
 		switch (widthVal) {
 			case 40:
-				console.log($('.calculation__filter-select').length);
 				$('.calculation__filter-select').each(function() {
 					$(this).children('option').each(function(i) {
 						$(this).attr('data-price', fourTy[i]);
