@@ -72,19 +72,20 @@ block content
 								// конец фильтра дверей
 								// фильтр глубины
 								.calculation__filter-block
-									p.calculation__filter-title._depth-bg Глубина
+									p.calculation__filter-title._depth-bg Глубина шкафа
 									.calculation__filter-range-wrapper(style="width: 210px;")
 										.calculation__filter-range#depth
 								// конец фильтра глубины
 								// фильтр ширины
 								.calculation__filter-block
-									p.calculation__filter-title._width-bg Ширина
+									p.calculation__filter-title._width-bg Ширина секции
+										span.calculation__filter-title-result-width
 									.calculation__filter-range-wrapper
 										.calculation__filter-range#width
 								// конец фильтра ширины
 								// фильтр высоты
 								.calculation__filter-block
-									p.calculation__filter-title._height-bg Высота
+									p.calculation__filter-title._height-bg Высота шкафа
 									.calculation__filter-range-wrapper
 										.calculation__filter-range#height
 								// конец фильтра высоты
@@ -212,9 +213,10 @@ block content
 																span.rubl a
 											p.feedback__slider-description-text Давно искала возможность заказать для дома шкаф. Пришло время! Я бы сказала пришел Шкафовский - мой супергерой! :)
 											.col-sm-7
-												p.feedback__slider-description-author
-													img(src="img/social.png", alt="")
-													| Мария Кравченко
+												a.feedback__slider-description-link(href="#")
+													p.feedback__slider-description-author
+														img(src="img/social.png", alt="")
+														| Мария Кравченко
 											.col-sm-5
 												p.feedback__slider-description-date 22 Август, 2015
 							// конец одного слайда

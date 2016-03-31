@@ -17,8 +17,9 @@ $(function() {
 		master = $('.calculation__master'), // картинка мастера на калькуляторе
 		price = $('[price]'), // цена общая без скидки
 		totalPrice = $('[total-price]'), // цена со скидкой
-		materialSum = 0; // сумма материалов дверей
-	sum = 0; // сумма калькулятора
+		resultWidth = $('.calculation__filter-title-result-width'), // общая ширина шкафа
+		materialSum = 0, // сумма материалов дверей
+		sum = 0; // сумма калькулятора
 
 	// изменяем количество дверей радиокнопкой
 	radioBtn.on('change load', function() {
@@ -58,7 +59,14 @@ $(function() {
 			imgChanger();
 			calculation(); // функция просчета
 			materialPrice(); // устанавливаем цены на материалы
-		}
+		},
+		stop: function(event, ui) {
+			resultWidth.html('Общая '+ (widthVal * doorsVal / 100) +' метра'); // показываем общую ширину шкафа
+			resultWidth.addClass('active');
+			setTimeout(function(){
+				resultWidth.removeClass('active');
+			},2000);
+		},
 	}).slider("pips", {
 		rest: "label",
 		suffix: " см"
@@ -402,13 +410,13 @@ $(function() {
 			dVal = depthVal / 100;
 		switch (doorsVal) {
 			case 2:
-				sum = (((wVal * 2) + (hVal - 0.5 * 1) + (wVal / 2 * 4)) * (dVal - 0.1)) * 1650;
+				sum = ((((wVal / 2) * 7) * dVal) * 1650) + 1650;
 				break;
 			case 3:
-				sum = (((wVal * 2) + (hVal - 0.5 * 2) + (wVal / 3 * 4)) * (dVal - 0.1)) * 1650;
+				sum = ((((wVal / 3) * 9) * dVal) * 1650) + 3300;
 				break;
 			case 4:
-				sum = (((wVal * 2) + (hVal - 0.5 * 3) + (wVal / 4 * 8)) * (dVal - 0.1)) * 1650;
+				sum = ((((wVal / 4) * 14) * dVal) * 1650) + 4950;
 				break;
 		}
 

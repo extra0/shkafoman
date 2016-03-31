@@ -32,7 +32,7 @@ $(function() {
 	ymaps.ready(function() {
 		var myMap = new ymaps.Map('map', {
 				center: [55.751574, 37.573856],
-				zoom: 9,
+				zoom: 10,
 				controls: []
 			}, {
 				searchControlProvider: 'yandex#search'
@@ -47,174 +47,63 @@ $(function() {
 		myMap.behaviors.disable('scrollZoom');
 
 		myMap.geoObjects
-			.add(new ymaps.Placemark([55.777697023347606, 37.70197299999995], {
-			}, {
-				iconLayout: 'default#image',
+			.add(new ymaps.Placemark([55.684758, 37.738521], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6701370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.833436, 37.715175], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6701370232536, 37.57420299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.687086, 37.529789], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([54.6701370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.782392, 37.614924], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6701370232536, 37.77440299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.642063, 37.656123], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6501370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.826479, 37.487208], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6401370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.694843, 37.435023], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.81326802337879, 37.48407599999996], {
-			}, {
-				iconLayout: 'default#image',
+	        }))
+	        .add(new ymaps.Placemark([55.790139, 37.814052], {
+	        }, {
+	            iconLayout: 'default#image',
 				iconImageHref: 'img/marker.png',
 				iconImageSize: [28, 40],
 				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6701370232536, 37.77440299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.1501370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.5501370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.51326802337879, 37.48407599999996], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([54.777697023347606, 37.70197299999995], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([54.5701370232536, 37.77420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6701370232536, 36.57420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([54.6701370232536, 36.23420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([54.6701370232536, 34.77440299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.0501370232536, 37.17420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.4401370232536, 37.47420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.86326802337879, 37.68407599999996], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6301370232536, 37.87440299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.6601370232536, 37.17420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.2201370232536, 37.17420299999994], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
-			.add(new ymaps.Placemark([55.71326802337879, 37.45407599999996], {
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/marker.png',
-				iconImageSize: [28, 40],
-				iconImageOffset: [-3, -40]
-			}))
+	        }))
+
 
 		myMap.geoObjects.add(myPlacemark);
 	});
